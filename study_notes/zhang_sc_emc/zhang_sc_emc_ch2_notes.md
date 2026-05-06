@@ -1,0 +1,1261 @@
+# Zhang《Spacecraft EMC Technologies》第2章
+
+> 本笔记基于 PDF 原文提取，100% 来源于原书内容。
+
+## 2. Basic Knowledge of EMC and Methods of EMI Control
+
+Chapter 2
+Basic Knowledge of EMC and Methods
+of EMI Control
+2.1
+Basic Knowledge of EMC
+2.1.1
+Common EMC Terms and Deﬁnitions
+2.1.1.1
+EMC and Margin
+Electromagneticcompatibility(EMC)istheabilityofelectricalequipmentorsystems
+to function properly in their electromagnetic environment (EME) while not causing
+unwanted effects such as electromagnetic interference (EMI) to anything else in
+this environment, as is often said that the ability that not to be interfered by other
+equipment or systems while do not interfere with other equipment and systems.
+Electromagnetic (EM) emission is a phenomenon in which EM energy is emitted
+from a source. The emission transmitted along a cable is called conducted emission,
+andtheemissiontransmittedthroughspaceiscalledradiatedemission.Themaximum
+emission level allowed in the EMC standards or speciﬁcations is called the emission
+limit.
+EM susceptibility is the EMI level in which the equipment or systems can function
+properly. The ability of equipment or systems to withstand conducted interference is
+referred to as conductive susceptibility, and the ability to withstand radiated interfer-
+ence is referred to as radiation susceptibility. The minimum immunity level required
+in the EMC standards or speciﬁcations is called the susceptibility limit.
+EMC margin is the differences between the susceptibility limit and the emission
+limit. The relationship among the emission limit, susceptibility limit, and the margin
+of equipment or a system is shown in Fig. 2.1.
+The electronic equipment in the system is generally divided into two categories.
+The equipment that emits voltages, currents, or EM ﬁelds is called EMI equipment
+and that which is subject to EM emissions and may cause performance degradation
+is called EM sensitive equipment. Some equipment, such as radars and transponders,
+have both EM emissions and EM reception functions, and can be converted to each
+other as the operating mode changes.
+© Beijing Institute of Technology Press and Springer Nature Singapore Pte Ltd. 2020
+H. Zhang et al., Spacecraft Electromagnetic Compatibility Technologies, Space Science
+and Technologies, https://doi.org/10.1007/978-981-15-4782-9_2
+11
+
+
+12
+2
+Basic Knowledge of EMC and Methods of EMI Control
+Fig. 2.1 Relationship among emission limit, susceptibility limit, and EMC margin of equipment
+2.1.1.2
+Three Elements of EMC and Immunity Test Levels
+The elements of EMC mainly include sources of interference, coupling paths, and
+sensitive equipment. The main tasks of EMC is to identify and control the EMI
+source, cut off the EMI coupling paths or increase the loss in the paths, identify the
+EM sensitive equipment, and improve its immunity capability.
+Inordertodetecttheimmunityabilityofelectronicequipmentmoreaccurately,the
+equipment faults, abnormalities, or performance degradation indicators in different
+intensity EMI environments are subdivided into three levels, e.g., survival level,
+working level, and performance level.
+The survival level means that the equipment under test (EUT) or system does not
+have any permanent performance failure in a speciﬁed intensity EMI environment.
+The working level means that the EUT or system does not experience malfunction,
+functional failure, and change of operation state or mode, memory change, or other
+external intervention in a speciﬁed intensity EMI environment. EUT is capable of
+performing all the common auxiliary functions (such as EUT system BIT,), but does
+not include the precise completion of some speciﬁc functions.
+The performance level means that the EUT or system can reliably perform its
+engineering tasks and meet the requirements of various technical speciﬁcations in a
+speciﬁed intensity EMI environment.
+2.1.2
+Periodic Signal Spectrum Envelope of Digital Circuits
+A large number of digital circuits are used on spacecraft electronic equipment, which
+will generate periodic signals such as clocks or crystal oscillators, as shown in
+Fig. 2.2.
+
+
+2.1 Basic Knowledge of EMC
+13
+V0
+tr
+Tp
+tpw
+Fig. 2.2 Example of periodic signal
+Assume that tpw = T p/2, and the rise time is equal to the fall time, the nth harmonic
+is
+Vn = V0
+sin
+
+πnf0tpw
+
+πnf0tpw
+sin(πnf0tr)
+πnf0tr
+,
+(2.1.1)
+where V n is the voltage amplitude of the nth harmonic of the signal, in V;
+V 0 is the signal voltage amplitude, in V;
+f 0 is the signal frequency in Hz; f 0 = 1/T p, where T p is the signal period, in s;
+tr is the signal rise time, in s;
+tpw is the signal width, in s.
+Two corner frequencies are included in the signal spectrum envelope, they are
+F1 =
+1
+πtpw
+(2.1.2)
+F2 = 1
+πtr
+(2.1.3)
+where F1, F2 are corner frequencies, in Hz.
+From frequency F1, the slope of the spectrum envelope is −20 dB/dec; from
+frequency F2, the slope is −40 dB/dec, as shown in Fig. 2.3. Therefore, the harmonic
+interference spectrum generated by digital circuits is closely related to the rise time
+and signal width time of various clock or crystal oscillator signals, and does not
+depend entirely on the frequency of the signal itself.
+
+
+14
+2
+Basic Knowledge of EMC and Methods of EMI Control
+Frequency/Hz(log)
+Voltage Amplitude
+dBμV
+-20dB/dec
+-40dB/dec
+F1
+F2
+Fig. 2.3 Spectrum envelope
+2.2
+Brief Introduction of Spacecraft EMC Engineering
+Manual and Standards
+(1) Spacecraft EMC engineering manuals mainly include
+➀ECSS-E-HB-20-07A-2012, Space Engineering, Electromagnetic Compati-
+bility Handbook;
+➁NASA-RP-1368-1995, Marshall Space Flight Center Electromagnetic
+Compatibility Design and Interference Control (MEDIC) Handbook;
+➂MIL-HDBK-1512-1997, Electro-explosive Subsystems, Electrically Initi-
+ated, Design Requirements and Test Methods;
+(2) Spacecraft electrical bonding design standards and manuals include
+➀NASA-STD-4003A-2013, Electrical Bonding for NASA Launch Vehicles,
+Spacecraft, Payload, and Flight Equipment;
+➁MIL-HDBK-1857-1998, Grounding, Bonding and Shielding Design Prac-
+tices;
+(3) Spacecraft electrical grounding design manual includes
+NASA-HDBK-4001-1998, Electrical Grounding Architecture for Unmanned
+Spacecraft;
+(4) Spacecraft cable layout manual includes
+MIL-HDBK-83575-1998,GeneralHandbookforSpaceVehicleWiringHarness
+Design and Testing.
+
+
+2.3 Spacecraft Electrical Bonding
+15
+2.3
+Spacecraft Electrical Bonding
+2.3.1
+Functions of Electrical Bonding
+Spacecraft electrical bonding is aimed to establish a low impedance current path
+between two metal objects, so that the potential voltage between different equipment
+and structures is minimal. The bonding provides a reliable path for fault current and
+electrostatic discharge (ESD) and helps to control the spacecraft EMI. The main
+functions of electrical bonding include
+(1) Providing a common potential reference for electronic equipment;
+(2) Providing a path for the RF current of the shielding and ﬁlter;
+(3) Providing a low impedance path for the antenna mounted externally on the
+spacecraft;
+(4) Providing a current path in fault condition and preventing overheating or electric
+shock.
+The spacecraft EMC technical requirements shall include the bonding design
+requirements and indicators. The implementation requirements are determined
+according to the electrical bonding classiﬁcation shown in Table 2.1.
+2.3.2
+Main Class of Electrical Bonding
+The electrical bonding of spacecraft structures and equipment are classiﬁed into
+Class C, H, R, and S. It is recommended to use standard bonding method to obtain
+a safe and stable bonding effect.
+Since a speciﬁc bonding may have to meet multiple application requirements, it
+should be implemented with the most Current Return path Bonding (Class Cstrin-
+gent bonding requirement. Product developers should analyze the bonding require-
+ments and evaluate the compliance of the bonding classiﬁcation of the structure and
+equipment with the functional requirements.
+Taking the bonding of the electronic equipment for the power supply and distribu-
+tion subsystem as an example, it must not only meet the requirements of the Class R
+bonding but also meet the requirements of Class H bonding for fault current protec-
+tion. Therefore, the bonding resistance should have low inductance DC of 2.5 m,
+while the bonding area must meet the requirement of withstanding maximum fault
+current for Class H bonding.
+2.3.2.1
+Current Return Path Bonding (Class C)
+If the spacecraft structure is used as a power current return path, it should meet the
+requirements of Class C bonding.
+
+
+16
+2
+Basic Knowledge of EMC and Methods of EMI Control
+Table 2.1 Electrical bonding classiﬁcation and implementation requirements (NASA-STD-
+4003A)
+Class of
+bonding
+Power supply loop
+Shock hazard
+RF reference
+Electrostatic
+charging
+Class C
+Class H
+Class R
+Class S
+Purpose
+To reduce power
+and voltage losses
+at the bonding
+interface;
+applicable for
+equipment that is
+intended to use the
+structure as a
+current return path
+To prevent ﬁre or
+shock hazard to
+personnel;
+applicable for the
+cases in which
+fault currents must
+be carried in the
+event of a short to
+case or structure
+To control the RF
+emissions of the
+equipment;
+applicable for
+equipment that
+may generate
+secondary
+emissions or that
+are sensitive to RF,
+including those
+that need to cover
+a wider frequency
+band, such as
+antennas and cable
+shielding
+connections
+To control the
+effects of ESD;
+applicable for
+equipment that
+may be
+electrostatically
+charged
+Requirements
+Make sure that the
+low impedance
+and low voltage
+are connected at
+the bonding point
+so as to provide
+sufﬁcient power;
+bonding
+strap/jumper may
+be used
+Make sure that the
+low impedance
+and low voltage
+are connected at
+the bonding point
+so as to prevent
+shock hazards or
+ﬁre; bonding
+strap/jumper may
+be used
+Provide low RF
+impedance at high
+frequencies; it is
+recommended to
+bond directly, or
+use short and wide
+bonding strap
+Moderate
+impedance is
+allowed,
+bonding
+jumper/strap
+may be used
+DC bonding
+resistance
+Bonding
+resistance is
+dependent on
+maximum current
+< 0.1 
+< 2.5 m, low
+inductance
+<1.0 
+Frequency
+requirement
+Low
+Low
+High
+Low
+Current
+requirement
+High
+High
+Low
+Low
+In the spacecraft EMC technical requirements, it usually clearly deﬁnes that the
+structurecannotbeintentionallyusedasacurrentreturn,andthattheanti-interference
+performance of the dedicated current return should be better than that of the structure.
+However, in some special spacecraft systems, structures are occasionally used as a
+current return path.
+
+
+2.3 Spacecraft Electrical Bonding
+17
+Note:
+(1) The electrical connection between the power supply and the load has some
+impacts on the voltage drop. Generally, the voltage deviation should be
+controlled to ensure that it meets the requirements of the power quality;
+(2) If the bonding of the structure or equipment is located in areas with ﬂammable
+materials, gases, or volatiles, take caution to prevent ﬂaming due to over-
+heating, sparking, or arcing; in this case, the return path should bypass the above
+dangerous areas as possible, and the bonding resistance should not exceed the
+maximum permissible value;
+(3) Magnesium alloy structure should not be used as a return path. If the bonding
+is poor, the temperature may reach the ignition point of the magnesium alloy;
+(4) Pipelines should not be intentionally used as a return path.
+2.3.2.2
+Electric Shock Hazard or Fault Protection Bonding (Class H)
+If the spacecraft electronic equipment is short-circuited, the fault current will ﬂow
+through the equipment casing or conductive structure, which may result in an electric
+shock or a ﬁre.
+The short-circuit failure current on the power line and equipment metal casing
+or other conductive structure should be able to return to the source through the
+bonding between the structures. Necessary circuit protection devices can shorten the
+time of failure current and prevent signiﬁcant temperature rise on the fault current
+path. Generally, the failure current is greater than the threshold of the fuse or circuit
+breaker, and will cause it to actuate quickly. In practice, however, the circuit breaker
+sometimes is activated only when the failure current reaches twice the rated value,
+and may be delayed by a few seconds. Therefore, all the bonding resistors on the
+fault return should be low enough to carry the corresponding current to ensure that
+the circuit protection equipment can be activated at the appropriate time. Note that
+if the structural material is not highly conductive, such as glass or carbon ﬁber, the
+circuit breaker may be delayed or not normally activated due to an increase in the
+fault path resistance. In severe cases, the temperature rise of the fault current may
+cause ignition of graphite epoxy material.
+All the equipment base plates and structures that share power supplies should
+be bonded together and be able to carry the maximum failure current, and make
+sure there are no signs of overheating or electric shock. According to the spacecraft
+bonding and grounding requirements, the voltage difference should be reduced to a
+minimal level by the electrical bonding of all equipment. The voltage on the casing of
+electronic equipment should generally be lower than 4.5 V, and no bonding damage
+or ﬁre will occur due to a short circuit.
+The bonding jumper/strap should match the current value of the fault path and
+meet low resistance requirements. Since the fault current is mainly a DC or low
+frequency, alternating the inductance of the bonding jumper has little effect on the
+fault current path. If the jumper is used to transmit RF current, then the effect of
+inductance needs to be considered.
+
+
+18
+2
+Basic Knowledge of EMC and Methods of EMI Control
+The requirements for Class H bonding are as follows:
+(1) The exposed casing and base plate of the electronic equipment shall be bonded
+to the structure with a bonding resistance not exceeding 0.1 ;
+(2) Metal conduits, cable trays, and other conductive objects susceptible to short
+circuits shall be bonded to the structure with a bonding resistance not exceeding
+0.1 ;
+(3) The conductive pipelines of the cable shall be connected to the conductive
+structure with a low resistance at each connector or break point; if necessary, it
+may be bonded by a conductive connector of the equipment;
+(4) The exposed conductor frames or components of the electrical and electronic
+equipment shall be bonded to the conductive structure with a bonding resistance
+not exceeding 0.1 . If there is a grounding port in the design or an interface
+is internally connected to the exposed parts, the corresponding port or interface
+should also be grounded;
+(5) Takingintoaccountpersonnelsafetyandﬁreprevention,thereturncircuitshould
+be able to carry an overload current 5 times that of the fault current for a duration
+of no less than 0.5 s (a typical human voltage leakage protector should be
+activated 0.2 s after short circuit occurs, the voltage on the relevant equipment
+housing should not exceed 4.5 V, and there should be no ﬁre or damage at the
+bonding);
+(6) Magnesium alloy structure should be avoided in the main fault return path. If
+the bonding is poor, the temperature will exceed the ignition point of the alloy
+material;
+(7) If the bonding of equipment and structures is located in hazardous areas such as
+ﬂammable materials, gases, or volatiles, caution should be taken to prevent the
+occurrence of ﬂaming due to overheating, sparking, or arcing; the return path
+shall bypass the above dangerous areas as far as possible.
+2.3.2.3
+RF Equipment Bonding or EMI Suppression (Class R)
+Class R bonding mainly provides a low-impedance path for the RF electronic equip-
+ment to reduce the effect of EMI and improve the stable operation performance
+of the equipment. It should meet the requirement of Class R DC bonding resistors
+of 2.5 m, and ensure good contact between the bonded metals and provide low-
+impedance connection within the operating frequency range of the equipment. The
+speciﬁc impedance value is dependent on the area and pressure of the bonding. The
+impedance of the RF section is generally in ohm, and the speciﬁc value will be
+affected by the inductive reactance. If the inductance has a large inﬂuence on the
+Class R bonding impedance, a systematic way of bonding is to be considered, so as
+to provide a lower impedance bonding path in the operating frequency band.
+The bonding path between the RF electronic equipment and the structure can be
+simpliﬁed to an equivalent circuit in which a resistor and an inductor are connected
+in series and then connected in parallel with a capacitor. The equivalent resistance
+includes the bonding resistance on each point and the resistance of all the bonding
+
+
+2.3 Spacecraft Electrical Bonding
+19
+jumpers. In the high-frequency band, since the impedance increases with the root
+mean square (rms) of the frequency, the impedance value is much larger than the DC
+resistance; the inductance is generally proportional to the length of the bonding path
+and is also related to its width and thickness. Multipoint grounding can reduce the
+inductance value by increasing the number of parallel current paths. The inductive
+reactance is generally increased by 20 dB per octave with frequency change; the
+capacitanceisusuallyproportionaltothecontactareabetweentheequipmenthousing
+and the structure and is inversely proportional to the distance between them, and the
+capacitive reactance generally decreases by 20 dB per octave with the change of the
+frequency.
+Electronic equipment with metal mounting tabs generally have an inductive reac-
+tance of more than 2.5 m on the frequency of 10 MHz or above. In the Class R
+bonding, an impedance of ohmic level can generally meet the requirements; however,
+if a bonding jumper is used, the impedance will quickly exceed the limit value as the
+frequency increases. If the jumper is the only way for Class R bonding, make sure
+that the aspect ratio of the jumper satisﬁes the requirement of 5:1.
+All antennas installed on the outer metal surface of the spacecraft shall be bonded
+to the structure with low impedance, with a DC bonding resistance no larger than
+2.5 m.
+A monopole or loop antenna mounted on the composite outer surface of a space-
+craft shall have a corresponding circular or elliptical ground plane, the radius of which
+is recommended to be 1/4 of the wavelength of the antenna operating frequency, and
+the DC bonding resistance should be no larger than 2.5 m, thus ensuring that the
+performance of the antenna is not affected by the conductivity of the composite
+material. Some antennas which are mounted on the composite outer surface do not
+require a corresponding ground plane, but in order to ensure their normal operation,
+a low-impedance bonding to the structure is usually needed.
+The ﬁlters on the power line and cable shielded terminals must be bonded to the
+structure with low impedance. If the size of an insulated structural component is
+close to 1/4 of the wavelength of the interference signal, the signals from high-power
+transmitters may be induced and secondary radiation may be generated, or even an
+arc discharge may happen due to induced voltage. Therefore, when such components
+become possible sources of interference, Class R bonding should be used, and care
+should be taken to control the length and width of the bonding jumper.
+Note that the high-frequency functions of some spacecraft electronic equipment
+may be only present during part of on-orbit missions, such as astronauts’ extrave-
+hicular activities. In this case, the corresponding Class R bonding requirements are
+to be reviewed properly.
+The general requirements for spacecraft Class R bonding include
+(1) Bonding of the internal and external structural components of the spacecraft,
+the interface plates on the outer surface, the doors and antennas, etc., shall be
+implemented in accordance with Class R requirements;
+(2) All conductors with a linear dimension of more than 30 cm, or cables with a
+transmission signal frequency above 10 MHz, such as the antenna’s transceiver
+
+
+20
+2
+Basic Knowledge of EMC and Methods of EMI Control
+cable, should be bonded to the structure at every 1/4 wavelength (the highest
+operating frequency); direct bonding is recommended as preferable; if an indi-
+rect bonding method is used, such as a bonding jumper, it should satisfy Class
+R bonding requirements;
+(3) The back-shell of the electrical connector and its shielded cables should be
+bondedtotheequipmentcasingwithlowimpedance.TheDCbondingresistance
+between the back-shell and the casing should not exceed 2.5 m (connecting
+points include those between the shielding layer and the back-shell, between the
+back-shell and connectors, between connector housings and equipment casings,
+etc.);
+(4) The impact of inductance, impedance, resonant frequency, and vibration on
+the bonding effectiveness should be considered to ensure that the DC bonding
+resistance at each point on the path does not exceed 2.5 m, thereby reducing the
+EMI onthefrequencybandof interest; if theuseof bondingjumper is neededdue
+to the environmental isolation requirements such as isolated vibration, the aspect
+ratio of the jumper should be no more than 5:1, and the bonding information
+should be marked in the structure and equipment drawings, and description of
+its position and surface treatment should be provided;
+(5) The bonding personnel shall test or analyze the bonding method to verify that
+it can provide a DC bonding resistance of no larger than 2.5 m and a bonding
+impedance of less than 100 m at 1 MHz. All Class R bonding between
+orbit-replaceable equipment and the mounting surface and structure shall be
+impedance tested during acceptance, or the test data in the assembly process
+can be used to prove that the Class R bonding requirements are met.
+2.3.2.4
+Electrostatic Charging Control Bonding (Class S)
+All conductors larger than 7–8 cm (except active antenna) may get their components
+or equipment charged due to the effect of precipitation static, liquid ﬂow, mechanical
+motion, or charged ion precipitation in space. Therefore, they should be bonded to the
+spacecraft structure in accordance with Class S bonding requirements. The general
+requirements are as follows:
+(1) If a conductive part of the isolated structure is larger than 100 cm2, and may
+be frictionally charged due to movement, liquid transporting, or charged by
+plasma-induced current, it should be bonded to the structure with a bonding
+resistance less than 1 ;
+(2) Composite materials that may be charged by friction or by plasma-induced
+current should be bonded to the structure, and the DC resistance between the
+composite material and the structure shall not exceed 1 k;
+(3) If the area of a moving part (such as a gear, a rotating joint) is larger than
+100 cm2 and may be frictionally charged, it should be bonded to the structure
+with a bonding resistance less than 1 ; the wires, brushes, and conductive
+lubricants of the moving part may also constitute an exhausting path, then the
+DC resistance of the exhausting path should not exceed 1 k;
+
+
+2.3 Spacecraft Electrical Bonding
+21
+(4) The metal pipeline for liquid transporting should meet the requirements of Class
+S bonding, and the resistance of the bonding to the structure should be less than
+1 ;
+(5) The bonding resistance between the conductive ﬁlm (after insulating treatment
+on the surface) and the spacecraft structure should be less than 105 ;
+(6) Conductive components located in hazardous areas such as ﬂammable materials,
+gases, or volatiles should be bonded according to Class S requirements, the
+bonding resistance shall be less than 1 . Attention should be taken to prevent
+accidental ignition due to overheating or arcing;
+(7) For a multilayer insulation material consisting of two or more layers, the layers
+should be electrically bonded together (continuous insulation layers may be
+regarded as a complete insulation part when considering the number of bonding
+points). Usually, if the area is larger than 100 cm2, at least one bonding point to
+the structure is needed; for those with an area greater than 1000 cm2, at least 2
+bonding points are needed. For every increase of 40,000 cm2 of the area, at least
+1 additional bonding point to the structure is required. It is recommended that
+each layer of insulation has at least 2 bonding points for mutual backup, and the
+resistance between the bonding and the structure should be less than 1 ;
+(8) The pipeline should avoid the main passage of the power supply (including
+normal and fault conditions). Metal pipelines (hoses) for liquid transporting
+should be bonded to the structure with a resistance not exceeding 1 ; the
+resistance of nonmetallic hoses should be no larger than 1 M/m so as to
+prevent the frictional charge of liquid ﬂow from accumulating between the
+hoses; nonmetallic pipelines should be designed such that the static voltage
+generated by liquid ﬂow does not exceed 350 V between any points on the
+pipeline;
+(9) If a detailed analysis of a Class S bonding has been conducted regarding the
+chargestoragecapacityandperformancerelationship,theDCresistancerequire-
+ment may be appropriately lowered. After electrical bonding is performed, it
+is recommended to conduct an analysis to the amount of electricity that may
+be accumulated. For special Class S bonding in hazardous areas, it is required
+that cumulative energy analysis be conducted according to its speciﬁc functions,
+to ensure that it is less than 1/10 or 20 dB of material ﬂaming or gas (steam)
+ignition energy, and then the corresponding bonding resistance requirements
+are determined.
+2.3.3
+Main Methods of Electrical Bonding
+It is recommended that direct bonding between metals is preferred. In case that direct
+bonding cannot be implemented, indirect bonding may be used, such as bonding
+jumpers or fasteners.
+
+
+22
+2
+Basic Knowledge of EMC and Methods of EMI Control
+2.3.3.1
+Direct Bonding
+The purpose of direct bonding between the equipment and the structure is to
+tightly connect the metal surfaces that are mutually matched. It can be a perma-
+nent ﬁxed bonding by welding or a semi-permanent bonding such as screws or
+clamps as required. Pay attention to the process of the bonding surface to ensure that
+corresponding bonding requirements are met.
+2.3.3.2
+Indirect Bonding
+In case that direct bonding cannot be performed, an indirect bonding method may
+be adopted, such as a bonding jumper or a fastener.
+Generally, bonding jumpers are used for Class C, H, and S bonding, but it is
+difﬁcult to meet Class R requirements. If a bonding jumper has to be used for Class R
+bonding,itshouldbeapprovedbytheprojectmanagementdepartment.Thefollowing
+should be taken into consideration when applying bonding jumpers:
+(1) Thebondingjumpersacrossthedamperorothersuspensionorsupportingequip-
+ment shall not affect the effectiveness of the corresponding equipment, that is,
+the jumpers shall be able to withstand the expected action or vibration and no
+failure will occur due to metal fatigue or other reasons; additional protection
+measures may be taken at the end of the jumper to avoid arcing or other EMI
+during the movement.
+(2) Class R bonding should be as short as possible. It is recommended to take a
+ﬂat form bonding with an aspect ratio of less than 5:1, so as to reduce the
+self-inductance coefﬁcient of the bonding jumper.
+Fasteners are originally used to maintain the pressure on the bonding surface.
+Fasteners are usually more effective than jumpers in Class R bonding, because
+the inductance between several bolts and the insulating material is lower than that
+between the surfaces of bonding jumpers. If fasteners (such as bolts, nuts and studs)
+must be used to meet the bonding requirements, corresponding approval proce-
+dures should be followed. When using fasteners for bonding, the following is to
+be considered:
+(1) If the bolts are part of the bonding path, analysis should be conducted on the
+number of bolts used in the path to ensure a low impedance;
+(2) Sealing should be done after fastener bonding so as to prevent corrosion effects
+from moisture and air;
+(3) Avoid using galvanized or anodized bolts, nuts, screws, washers, or self-tapping
+screws during bonding.
+
+
+2.3 Spacecraft Electrical Bonding
+23
+2.3.4
+Cleaning and Protection of Bonding Surfaces
+All nonconductive materials on the surfaces of electrical bonding between metals
+should be removed before bonding, and protective treatment should be done
+thereafter.
+The cleaned bonding surfaces should be protected with a cover material or a
+protective ﬁlm. After the protective materials are removed before bonding, clean
+any possible dust or other particles with a blower, a vacuum cleaner, and necessary
+solvent. After bonding, if it is proved to meet the corresponding requirements by
+testing, the bonding surfaces can be sealed semi-permanently with non-hardened
+sealing material or thermal grease; if the bonding is permanent, it can be sealed with
+hardened sealing material after test. Periodic inspection should be done to ensure a
+stable bonding performance.
+(1) Electrochemical corrosion of different materials: If different materials are
+directly bonded and moisture gets into it, it may cause electrochemical corro-
+sion, thus affecting the bonding efﬁciency and the strength of the bonding point.
+It is recommended to select bonding material according to the electrochem-
+ical sequence and make proper moisture-proof treatment during development,
+testing, and other processes;
+(2) Carbon ﬁber materials: In carbon ﬁber (CFRP) materials, although the graphite
+ﬁbers have certain conductivity, they are usually covered by nonconductive
+epoxy or phenolic resin materials. Therefore, CFRP should mainly use Class S
+bonding which controls electrostatic discharge (ESD), and partially use Class R
+bonding with reference to RF application requirements. Note that CFRP cannot
+be used for Class C or H bonding path.
+When bonding CFRP, ﬁrst, expose the graphite layer in the CFRP after removing
+thenonconductivematerialonthebondingsurface,thenoverlapandbondthegraphite
+materials, and apply a layer of conductive epoxy resin on the exposed graphite
+material, and ﬁnally bond it to the metal surface.
+2.3.5
+Veriﬁcation of Bonding
+Veriﬁcation of the compliance with spacecraft electrical bonding requirements can
+be done by testing, similarity comparison, analysis, inspection, or the combination
+thereof. The veriﬁcation methods used should be given in relevant documents.
+All bonding resistance requirements should be veriﬁed by sampling test (veriﬁ-
+cation of other bonding by the same method can be analogized), because measuring
+each point on the path is unfeasible, so generally the bonding resistance at both
+ends are measured. The bonding control in the shielded terminal is usually achieved
+by connector assemblies. The resistance between the shielding and the equipment
+casing is typically 10 m, and the bonding resistance at each point should not exceed
+
+
+24
+2
+Basic Knowledge of EMC and Methods of EMI Control
+2.5 m. The current-carrying capacity and low inductance requirements for Class
+C, H, and R bonding can be veriﬁed by analysis and inspection. The bonding resis-
+tances between some equipment mounting surfaces and connector back-shell contact
+surfaces can be veriﬁed at the equipment level. If it is a riveted bonding, it is accept-
+able that only the lowest value of the three bonding points satisﬁes the bonding
+requirements.
+If there is a conductive coating on the surface of the spacecraft, the compliance
+shall be conﬁrmed by testing or analysis to ensure that the electrostatic accumulated
+on the surface and generated by friction do not endanger the launch or ﬂight mission
+of the spacecraft.
+The records of the acceptance process generally include
+(1) Cleaning method of bonding, surface preparation, and sealing treatment after
+bonding;
+(2) Identifying available protective coating and methods of electrochemical protec-
+tion and control;
+(3) The corresponding supporting data during the veriﬁcation process which will
+facilitate the analysis of impedance characteristics, etc.
+2.4
+Spacecraft Grounding
+2.4.1
+Overview
+Grounding design is an important part of the system-level spacecraft design. A good
+grounding system helps to reduce EMI and other interference on various spacecraft
+electronic equipment, ensures safety of the astronauts and the normal operation of
+equipment under fault conditions, thus achieving EMC of the system.
+There are many parallel power distribution and signal channels on the space-
+craft that may become interference coupling paths for the ground loop and common
+impedance source. The ground loop will sense and propagate different frequency
+levels. These changing and uncontrolled levels constitute interference on the perfor-
+mance of the electronic equipment. Grounding is an important way of controlling
+such interference by design approaches.
+The purpose of grounding design for the spacecraft system is to group the
+conductor structures such as the module, subsystem, equipment, metal parts, and
+electrical and electronic components into a ground reference, and prevent intentional
+current ﬂow through the ground reference. In the electrical design of spacecraft, it
+should be noted that the inﬂuence of the EME on the ground will not change with
+the change of conﬁguration. Each power supply that operates separately should be
+grounded to the structure at a single point. The grounding of electrical and electronic
+equipment should be isolated from the external power and signal return lines.
+The type of grounding should be selected appropriately according to the mission
+and size of the spacecraft during the design, and ensure that all hardware equipment
+
+
+2.4 Spacecraft Grounding
+25
+comply with the grounding design speciﬁcations of the system. The grounding design
+requirements should be clearly deﬁned before the subsystem development plan is
+ﬁnalized; otherwise, it will increase the difﬁculty of revision and implementation in
+the preliminary design review (PDR) phase.
+The conductive components and structures of the spacecraft should be bonded
+together with low resistance in order to provide a common voltage reference point,
+and should not intentionally carry current. There are some differences between
+bonding and grounding, but they are often used in the same condition. A good
+bonding should provide a near 0 V reference for the return circuits of electronic
+equipment in all frequency bands. The grounding reference system is not only a
+reference for the DC voltage, but also a zero-potential reference for HF signals.
+Figure 2.4 shows an example of the spacecraft power bus grounding. Some subsys-
+tems or equipment are very large in scale, their grounding layout should be analyzed
+and designed separately according to the system requirements.
+Figure 2.5 is a schematic diagram of equipment grounding, and some terms, such
+as circuit common ground and chassis ground, are given.
+Isolation between grounds is an important concept. The purpose of isolation is
+to suppress the external signals and interference currents at the circuit interface (the
+best isolation is without interference current). If there is a DC ground between two
+Fig. 2.4 Schematic of the spacecraft power bus grounding
+
+
+26
+2
+Basic Knowledge of EMC and Methods of EMI Control
+Chassis
+Structural cabin floor
+Chassis ground
+Circuit ground
+Circuit common 
+ground
+Circuit common 
+ground 
+Signal loop leading out from 
+the equipment (not connected 
+to the casing)
+Reliable bonding between casing 
+ground and structural cabin floor
+Fig. 2.5 Schematic diagram of equipment grounding
+components and each has a mutually isolated ground wire to its chassis, their signal
+interfaces are not mutually isolated.
+Figure 2.6 shows an example of a subsystem that is isolated from external DC but
+not internally isolated (allowing a ground loop). The signal return can be connected to
+thechassisgroundviathereturnline.TheDCisolationinterfacebetweencomponents
+typically uses a transformer to transmit power, so there is no DC path between
+components.
+The wires that connect the subsystem to the chassis actually form a set of series
+resistance and inductance and form various types of capacitance with adjacent
+objects, all of which affects the effectiveness of the grounding design. If the interfer-
+ence voltage or current has a high AC frequency (usually above 1 MHz), the inductor
+and capacitor may have signiﬁcant impact on grounding quality. The length of the
+grounding wire for HF band should be shortened as far as possible, and it is recom-
+mended that the operating wavelength does not exceed 1/20, so as to provide good
+grounding.
+DC loop
+Return
+circuit reference grounds
+equipment reference grounds
+connected to casing ground via wires
+circuit (transformer)
+Fig. 2.6 Example of DC isolated but not internally isolated subsystem
+
+
+2.4 Spacecraft Grounding
+27
+2.4.2
+Types of Grounding System
+Spacecraft grounding can be divided into the following application modes, e.g.,
+single-point grounding (SPG), multipoint grounding (MPG), and hybrid grounding.
+Single-point grounding means that the current return is grounded only at one
+point, all grounding leads are directly connected to the same grounding point and
+then connected to the structure. It is not easy to form a ground current loop for
+SPG, which minimizes the radiated EMI. SPG is further divided into series SPG and
+parallel SPG. Series SPG mode may bring about a certain degree of common-mode
+(CM) interference on the common return line. If such mode is later integrated into the
+grounding system, it may cause unpredictable problems; parallel SPG (planet type)
+can eliminate the effect of EMI more effectively because of the isolation between the
+grounding wires of various equipment. The schematic of SPG is shown in Fig. 2.7.
+Multipoint grounding means that the ground lead of each item of the equip-
+ment is connected to the near ground conductor. MPG minimizes ground impedance
+between different equipment and reduces EMI at higher frequencies. MPG circuits
+b) Parallel single-point grounding (planet type)  
+Equipment 1 
+Equipment 2 
+Equipment 3 
+ground
+a) Series single-point grounding 
+Equipment 1 
+Equipment 2 
+Equipment 3 
+ground
+Fig. 2.7 Diagram of single-point grounding modes
+
+
+28
+2
+Basic Knowledge of EMC and Methods of EMI Control
+Fig. 2.8 Diagram of multipoint grounding mode
+have simple structures, and can signiﬁcantly reduce the HF harmonics and impuri-
+ties in the grounding lines. However, MPG may form many ground loops inside the
+equipment, thus reducing the equipment’s anti-interference capability. Therefore, in
+the case of MPG, pay attention to the ground loop problems shown in Fig. 2.8.
+Hybrid grounding mode combines the advantages of SPG and MPG. For DC or
+LF signals, the circuit is a SPG; for HF signals, it is an MPG. With the increasing
+complexityofspacecraftelectronicequipmentandhighersignalfrequenciesused,the
+EMC problems such as mutual interference between signals are becoming more and
+more serious; a single grounding mode cannot meet the requirements of spacecraft
+equipment, so hybrid grounding is recommended to be used on spacecraft, as shown
+in Fig. 2.9.
+In general, the grounding mode of a system is largely determined by the actual
+requirement. Even if the system or subsystem is designed to be isolated from the
+structure, it is still necessary to place an electrostatic discharge resistor. Be aware
+that the circuit is susceptible to interference after ﬂoating, and this type of isolation
+may conﬂict with some electrical safety regulations. The schematic diagram of the
+ﬂoating ground system is shown in Fig. 2.10.
+Equipment isolation
+Fig. 2.9 Diagram of hybrid grounding mode (NASA-HDBK-4001)
+
+
+2.4 Spacecraft Grounding
+29
+Equipment isolation other
+Circuit common reference ground
+isolated from the casing ground
+Fig. 2.10 Diagram of ﬂoating ground system (NASA-HDBK-4001)
+Circuit ﬂoating ground should be avoided as much as possible, but some equip-
+ment may be in a ﬂoating ground state for a certain period of time due to mismatch, for
+example, the wire may be in a ﬂoating ground state when the switch is disconnected.
+To prevent ﬂoating ground conditions, it is recommended to place an electrostatic
+discharge resistor (e.g., 5 M) between the equipment circuit and the structure.
+2.4.3
+Grounding Test and Veriﬁcation Methods
+To verify the grounding effect of a circuit, an ohmmeter should be used to measure the
+corresponding core point of the electrical connector (using a transfer box or a transi-
+tion plug) to test the compliance with the grounding requirements. The capacitance
+between the circuit and the structural base plate can be measured using a capacitance
+meter. Note that voltage measurement is also very important, and checks whether
+the relevant grounding requirements are satisﬁed.
+In order to verify the internal isolation or grounding path of the equipment exter-
+nally, the signal ground reference in the equipment can be connected to one point on a
+connector by wires, and the equipment structure bottom plate is connected to another
+point on the same connector, then connect the corresponding points with a jumper,
+and the grounding test can be performed. The disadvantage is that a dedicated elec-
+trical connector is required to achieve grounding, which increases the complexity of
+cable design. An alternative test program is also very complicated, that is, ﬁrst, lead
+out the signal ground and insulate it to a grounding terminal on the side of the chassis,
+then ground it through another external terminal, and measure the characteristics of
+the grounding path.
+2.5
+Spacecraft Cable Layout and Shielding
+The design of spacecraft cable layout is an important part of EMI control. The signals
+transmitted in a cable may be coupled to the adjacent cables. To reduce the external
+inﬂuence of the interference circuit by coupling effect, spatial isolation or shielding
+
+
+30
+2
+Basic Knowledge of EMC and Methods of EMI Control
+measures shall be taken for the corresponding cables to minimize the EM coupling
+between relevant circuits via the cables.
+In order to reduce the EM coupling between cables, in addition to transmitting
+signals via ﬁber-optic cables, isolation measures should be taken for cables that
+may cause interference or that are related to the interfered circuits. To do so, it is
+required to well understand the signal transmission characteristics in the harnesses,
+cable performance, and expected path environment. The isolation measures that may
+be taken include bundling the cables according to their classiﬁcation, decoupling
+with twisted pair between the power/signal cables and loops, cable shielding, spatial
+isolation in cable layout, etc.
+2.5.1
+EMC Classiﬁcation of Circuits
+The signals transmitted in the cables are closely related to the circuit characteris-
+tics, so classiﬁcation of the cables is essentially the classiﬁcation of the relevant
+signal circuits. The classiﬁcation criteria for signal circuits on the spacecraft can
+be adjusted as required; the core purpose is to distinguish the interference signal
+circuits from the sensitive signal circuits, and take corresponding isolation measures
+according to shielding requirements, so as to prevent accidental grounding. The EMC
+classiﬁcation criteria for common spacecraft circuits are shown in Table 2.2.
+The circuit classiﬁcation criteria for International Space Station has added the
+load impedance parameters and adjusted some parameters according to the voltage
+susceptibility. In addition, the recommendations for shielding and grounding are
+given; refer to Table 2.3. The reason is that if the interface circuit is sensitive to
+EM ﬁelds, even if the amplitude of the coupled interference signal is small, it will
+still have an impact. Therefore, the circuit classiﬁcation should not be limited to the
+parameters such as frequency, rise/fall time (related to the spectrum range of the
+interference signal), impedance (identifying potential EM ﬁeld coupling mode), or
+voltage, but should be based on the sensitive characteristics of the circuit.
+2.5.2
+Requirements for Cable Shielding and Grounding
+2.5.2.1
+Magnetic Field and Electric Field Coupling
+Magnetic ﬁeld coupling mainly occurs in the low-frequency band, and electric ﬁeld
+coupling mainly occurs in the high-impedance circuits or long interconnecting line
+and sensitive circuits, where lumped impedance can be used for model analysis.
+For parallel cable bundles on the ground plane, the coupling characteristics can be
+quantitatively analyzed based on the voltage generated by the current induced by the
+interference line in the sensitive disturbed loop. These parameters are related to the
+transfer impedance effectiveness of the two bundles under typical load conditions.
+
+
+2.5 Spacecraft Cable Layout and Shielding
+31
+Table 2.2 EMC classiﬁcation criteria for common spacecraft circuits(MIL-HDBK-83575)
+Category
+Circuit interference and
+susceptibility characteristics
+Shielding requirement
+Cat I
+Power and control signals
+a. VDC > 10 V
+Power and signal lines are twisted
+in pairs with their loops, shielding
+is not required
+b. VDC < 10 V, I > 5 A
+c. f AC < 100 kHz, VRMS >
+25 V
+d. Pulse circuit Vmax > 25 V,
+tr,f > 1 μs
+Cat II
+High-level signals
+a. Digital circuit Vmax =
+5–25 V, tr,f > 1 μs
+Signal line and its loop are
+twisted in pairs and shielded
+b. Digital circuit Vmax =
+1–10 V, tr,f < 1 μs
+c. f AC < 100 kHz, 5–25 V
+d. f AC 100 kHz to 1 MHz,
+1–10 V
+Cat III
+Low-level signal
+a. VDC < 10 V, I < 5 A
+Signal line and its loop are
+twisted in pairs and bulk shielded
+b. f AC = 100 kHz to 1 MHz,
+V < 10 V
+Signal line and its loop are
+twisted in pairs and shielded
+c. f AC < 100 kHz, < 5 V
+Bundle bulk shielding
+d. Digital circuit Vmax<1 V,
+tr,f<1 μs
+Twisted-pair shielding
+e. Digital circuit Vmax<5 V,
+tr,f>1 μs
+Twisted-pair shielding
+Cat IV
+EED signal
+All EED circuits
+Bundle twisted in pairs, then
+shielded separately
+Cat V
+Strong HF signal
+a. f AC > 1 MHz
+The cable impedance of
+waveguide, coaxial, or balance
+shielded cable is no greater than
+100 
+b. Digital circuit VMax >
+10 V, tr,f < 1 μs
+Coaxial or balance shielded cabl
+c. f AC = 100 kHz to 1 MHz,
+V > 10 V
+Coaxial or balance shielded cable
+2.5.2.2
+Grounding and Shielding of Connector Terminals
+In general, shielding helps to improve the ability of each type of circuit to protect
+against radiated interference. Due to the requirements for the cable capacitance
+parameters, it is possible to replace the twisted-pair shielded cable with a coaxial or
+balanced shielded cable. For circuits in strong EME, additional shielding measures
+may need to be considered, such as secondary shielding.
+
+
+32
+2
+Basic Knowledge of EMC and Methods of EMI Control
+Table 2.3 EMC classiﬁcation criteria for international space station circuits (SSP 30242 F)
+Frequency (f)
+Rise/fall time (tr, tf)
+(ms)
+Voltage or
+susceptibility
+Load
+impedance
+()
+Circuit
+category
+Minimum
+cable type
+Mode of
+Shielding
+and
+grounding
+Analog
+(DC, AC)
+f ≤50 kHz
+tr, tf ≥10μs
+≤100 mV
+< 600 k
+I
+TWS
+MPG
+≤100 mV
+≥600 k
+I
+TWDS
+MPG
+<6 V
+All
+I
+TWS
+MPG
+6–40 V
+>40 V
+All
+II
+TW
+TW
+None
+None
+50 kHz < f ≤4 MHz
+tr, tf ≤10 μs
+<100 mV
+All
+V
+TWDS
+MPG
+>100 mV
+All
+V
+TWS
+MPG
+F > 4 MHz
+All
+All
+V
+TWS,
+Coaxial, or
+Triax
+MPG
+EED
+All
+All
+IV
+TWS
+MPG
+In order to ensure the continuity of the equipment shielding, both ends of the
+cable should be grounded, therefore, a good bonding between the connector and the
+mounting surface is necessary to meet the grounding requirements.
+The effectiveness of braided shielding wire is very limited, so within the LF range,
+SPG mode can be used to avoid ground current.
+(1) Shielded terminal and grounding
+In the HF band, because the length of the cable will signiﬁcantly affect the radiation
+effectiveness or reception characteristics, for HF circuits (above 0.1 MHz), digital
+circuits with signal rise/fall time less than 1 μs and EED ignition circuit (Cat. IV),
+MPG mode of grounding is commonly adopted. For other types of circuits, single-
+end shielding and grounding may be used, except for multilayer shielded circuits. In
+order to prevent interference inductance, the outer layer of the multilayer shielding
+should adopt MPG mode. If the purpose of single-end grounding is to prevent the
+radiated inductance in the circuit, it should be grounded at the receiving or high-
+resistance end; if it is to reduce the radiation of the circuit, it should be grounded
+at the signal source end. In addition, the ﬁlter wire should be treated carefully to
+prevent mutual inductance between the input and output lines of the ﬁlter. For the
+long connection part, pay attention that shielded cables and connectors should be
+treated to reduce the effects of RF current on the shield. A double shielded cable
+may be used if necessary.
+
+
+2.5 Spacecraft Cable Layout and Shielding
+33
+(2) Shielded terminals in strong EME
+All shielded cables that may be affected in a strong EME should be bonded at 360°
+to the back-shell of the connector. The ungrounded inner shielding layer should be
+connected inside the connector back-shell and protected against wear. Besides, the
+ungrounded internal shielded terminals should be isolated from the connector core,
+the back-shell, and the adjacent layers of shielding.
+(3) Grounding of shielded circuit terminals of Category I, II, III, and V
+These circuit categories should be grounded to the structure with the shortest
+path if they are not subject to strong EMI. The speciﬁc grounding methods may
+include connection by an electrical connector, or to a core point or structure of the
+electrical connector by a “pigtail”. The length of the “pigtail” or the wire between the
+shielding and the ground should be as short as possible. For bundles with no more
+than 20 shielded cables, the wire length should be no more than 100 mm. The length
+of the unshielded and insulated cables at the rear of the connector back-shell shall
+not exceed 20 mm.
+(4) Shielded grounding terminals of Category IV circuit
+The shielded cables of Category IV circuits (EED) shall be bonded at 360° and
+extended into the connector back-shell. The EED circuit that is directly connected
+to the electro-explosive device (EED) shall be bonded at 360° and connected to
+the EED connector back-shell or the switch connector. If it is not speciﬁed as an
+EMP environment, it can be directly connected to the structure by a “pigtail” that is
+connected to the connector core.
+(5) Ungrounded shielded terminal (non-strong EME)
+Shielded wire terminals that are neither grounded nor in a strong EME should be
+protected against wear and isolated from the connector back-shell and adjacent
+shielding. In practice, the ungrounded end of the shielding should be connected
+to the connector core through a “pigtail” so that the shielding is continuous and the
+resistance can be measured. The length of the unshielded and insulated part on the
+rear of the connector shall not exceed 20 mm.
+(6) Cable termination
+The cable shielding should cover the connectors at both ends and be connected
+directly to the structure or housing, or connected through the connector back-shell
+or wire. The insulation layer of the cable should be stripped off with special tools
+but without damage to the cable. The length of the exposed conductor after stripping
+should meet the requirements of the connecting wire. In addition, no excess conductor
+should be exposed to the environment or the terminal.
+
+
+34
+2
+Basic Knowledge of EMC and Methods of EMI Control
+2.5.2.3
+Grounding of Cable Shielding Layers
+According to the grounding principle, the balanced circuits with operating frequency
+below 100 kHz should be single-end grounded. The shielding should be periodically
+bonded to prevent large currents or voltages that may be induced on the surface of the
+shielding by ambient environment. Cables are required to be shielded and bonded at
+each deck or equipment. Additionally, the shielded conduit should be bonded every
+3–5 feet and as directly as possible. The outer shroud of the coaxial cable must be
+grounded to the casing at both ends, and try to avoid “pigtail” type connection. Even
+if grounding techniques have been adopted, the following recommendations would
+be a good guidance for signal cables:
+(1) The shielding should not be used as a signal loop;
+(2) All signal circuits, including signal grounding loop, should be shielded sepa-
+rately and covered with an insulating sleeve. The balanced signal circuit should
+be twisted, and balanced coaxial cable should use the same shielding. All shields
+should be insulated from the rest of the cable;
+(3) Coaxial cables shall meet the impedance characteristics at the port and be
+grounded at both ends;
+(4) For wide-area electronic and power distribution systems, MPG is more effec-
+tive for HF interference control. MPG uses several short ground connections
+to provide a low-impedance ground loop for improved efﬁciency of the ﬁlter
+installation. In the LF band, SPG may be used for low-level systems such as
+audio or preampliﬁer. If the shielded cable of a sensitive circuit is grounded
+at both ends, it may be affected by the audio interference signal in the ground
+plane;
+(5) Coaxial cables that carry high-level energy should not be bundled with
+unshielded cables or with shielded cables that carry low-level signals.
+2.5.3
+Cable Harness Layout
+2.5.3.1
+Design Considerations
+During the design phase, the cable bundle layout should be planned according to the
+location of the equipment and the concept of reducing interference coupling between
+transmission lines should be followed. Besides, sensitive devices should be arranged
+away from interference source. A power or divider panel can be used to isolate or
+shield these devices.
+For sensitive equipment, their power lines, control lines, and cables should not be
+arranged close to any sources of interference, nor should they transmit interfering
+signals due to inductive coupling. If sensitive signal lines must pass near a wire that
+may transmit interfering signals, the relevant angles should be set to right angles as
+much as possible to reduce the magnetic ﬁeld coupling effect. If power is transmitted
+through multiple wires, it should be directly supplied to each item of the equipment
+
+
+2.5 Spacecraft Cable Layout and Shielding
+35
+from the bus, thus reducing mutual interference between them. In addition, signal
+circuits should be isolated from AC power circuit and other lines that may transmit
+EMI.
+Using shielded wires inside the equipment helps to prevent interference signals
+from coupling to sensitive circuits. When connecting to the connectors, try to reduce
+the length of broken braided shielding to ensure the integrity of the shielding. The
+shielded cable should be directly bonded to the casing at the port and closely along
+its length. Cables laid in rows or across can share a shielded bonding.
+The required information regarding the path, cable length, connector location,
+support requirements, and wire path can be obtained by using the 3D model of the
+spacecraft. The model can also be used to display the cable layout and ﬁxtures during
+design review and installation demonstrations.
+2.5.3.2
+Path Selection
+When selecting a cable path, the system reliability requirements should be taken into
+account at ﬁrst. The layout should be easy to move or replace related equipment.
+When the cable passes through small holes, the minimum turning radius should be
+considered to ensure secure installation and prevent it from damage or being inter-
+fered by other equipment. The relevant parameters are described in corresponding
+standards or manuals of the cable.
+During layout design, ensure that the cables are not misused as a handle or a
+temporary support. Similar connectors or cable joints should not be used in the
+adjacent operating areas, or wrong connections in the layout.
+When the cable harness is close to gas or liquid pipelines or equipment such as
+combustible, corrosive, and low-temperature cooling, they should keep a distance
+of at least 50 mm to avoid accidental damage by the gas or liquid. Similarly, cables
+should keep a proper distance from transmitting equipment to avoid the effect of heat
+dissipation on the cable performance. The cable layout should also maintain neces-
+sary mechanical strength, connection, and mounting support to avoid slackening due
+to vibration, thermal environment, and tolerances.
+When the cable must pass through a moving or rotating interface, such as a solar
+array drive assembly, the surrounding dimensions and distance should be clearly
+deﬁned in the installation drawing. The matching ﬁxture should be close to the
+loop and should not affect the mechanical motion. Each loop should be ﬁtted with a
+connector, and can be installed or unlocked without affecting the cable conﬁguration.
+Cables with traverse motion or rotating interfaces should be free of stress.
+2.5.3.3
+Cable Harness Isolation Requirements
+Each type of harness should be physically isolated from other numbered harnesses.
+The isolation spacing should ensure that other harnesses are not affected by the
+EM coupling of the interference harness, and the isolation requirement of 20 dB is
+
+
+36
+2
+Basic Knowledge of EMC and Methods of EMI Control
+recommended. Wire slots can be used to replace physical isolation. The height of
+the slot should be greater than the diameter of the harness and should have proved
+to be able to provide 20 dB isolation. When metal protection is used to replace
+physical isolation, it should be marked in the wiring diagram. Moreover, the harness
+layout depends on the requirement of minimum and maximum voltage and sensitive
+characteristics.
+If different types of circuits originate from the same connector, the layout of the
+core points should ensure isolation between different types of circuits. The excess
+core points can be grounded to provide isolation between wires.
+Cat IV circuits shall be at least 30 mm apart from other types of harnesses and
+must not share connectors with other types of circuits.
+High-impedance circuits (greater than 1 k) or sensitive circuits (less than 5 V)
+should be isolated even if they are of the same category.
+The antenna cables should be isolated from each other and from other types of
+circuits. Cables to the backup subsystems or equipment should be isolated from each
+other to avoid the impact of other subsystems.
+2.5.3.4
+Shielding and Isolation Requirements
+The shielding of space equipment cables should be described in the design analysis
+report for EME effects. The ports of the system interconnecting cables should be
+well shielded as required.
+Shielded cables should be properly treated at both ends to provide optimum
+shielding effectiveness, and the intermediate break points should be controlled as
+much as possible within the connector back-shell or in the shielding protection of
+the entire bundle of cables to meet the relevant requirements. Direct connection or
+“pigtail” termination will generally affect the shielding effectiveness in the frequency
+band above 10 MHz and should be avoided as much as possible.
+(1) Cable ports: When multiple RF shielding terminals are used, the RF interference
+(RFI) back-shells should be grounded separately. The length from the cable port
+to ground should not exceed 3 inches (7.5 cm) for RF circuits. The optimal
+method is to make the shield layer well bonded with the back-shell of the RF
+connector. This requires a continuous low-impedance path to be formed by the
+grounding between the connector back-shell and the shielded cable, between the
+connector and chassis mounting interface, and from the chassis to the module
+ﬂoor. All connectors that will not be used in the mission should be covered
+with metal shields, and high-impedance cables should be terminated with low
+impedance;
+(2) Break-point problem: When multi-shield port RFI back-shells are grounded
+separately,acableshieldingbreak-pointofnomorethan2incheswillbeexposed
+on the shielded RF circuit. This break-point should be covered with a metal
+back-shell as much as possible;
+
+
+2.5 Spacecraft Cable Layout and Shielding
+37
+(3) Grounding of RF circuit shielding: The shielded RF circuit should be grounded
+as close as possible. This requirement also applies to metal back-shell grounding
+and intermediate break-point grounding at the source end and loading end;
+(4) Varioustypesofequipmentmaybeconnectedtothepowerline,sotheequipment
+signal line should be isolated from it as much as possible.
+2.5.3.5
+Layout of Conduits and Wire Slots
+The installation planning of conduits and wire slots should include identiﬁcation of
+high- and low-level cables, dedicated lines, and isolation measures. Metal conduits
+should be used for signal or power cables if necessary. Open overhead wire slots
+should be avoided as much as possible near RF interference sources; grounding
+measures may be taken for contained wire slots or conduits.
+2.6
+Summary
+EMI controls of the spacecraft system mainly include bonding, grounding, cable
+layout, and shielding.
+Bonding should be implemented according to the most stringent requirements for
+various purposes, such as current return path, electric shock hazard protection, EMI
+suppression, and electrostatic charge control. During speciﬁc operation, attention
+should be attached to the orderly implementation of all the steps in processes such
+as bonding surface cleaning, veriﬁcation, and protection.
+As for grounding, Hybrid grounding method is recommended. In addition,
+measures should be taken to isolate faults in the grounding of the power supply
+and distribution subsystem. In practice, there will always be special conditions that
+cannot meet the grounding requirements, so relevant risk analysis and veriﬁcation
+are required.
+The cables on the spacecraft system should be classiﬁed according to the charac-
+teristics of the transmitted signals; the requirements for shielding and grounding of
+the cables should be clearly deﬁned; and cables and connectors should be selected
+according to their corresponding category. It is recommended to plan the layout paths
+according to the installation positions of various equipment and follow the concept
+of reducing the interference coupling between the transmission cables.

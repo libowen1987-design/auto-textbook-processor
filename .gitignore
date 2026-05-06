@@ -1,0 +1,115 @@
+# ============================================================
+# Auto-Textbook-Processor & Electromagnetism Notes
+# .gitignore — Strict anti-copyright-piracy rules
+# ============================================================
+
+# -------- SOURCE MATERIALS (NEVER COMMIT) --------
+# Compressed/scanned original textbooks
+*.pdf
+*.epub
+*.mobi
+*.djvu
+*.azw
+*.azw3
+*.chm
+
+# Raw scanned/OCR'd source directories
+raw_pdfs/
+raw_docs/
+raw_texts/
+scans/
+source_materials/
+
+# Download caches
+*.torrent
+__MCP_DONE__*
+
+# -------- PYTHON --------
+
+# Byte-compiled / optimized
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# C extensions
+*.c
+*.o
+*.so
+*.build/
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# IPython
+profile_default/
+ipython_config.py
+
+# PyInstaller
+*.manifest
+*.spec (keep if needed for build)
+
+# -------- IMAGES / FIGURES (user-contributed only) --------
+# Note: figures/ directory contains COMPUTED/GENERATED plots
+# These are safe to commit (derived from physics formulas)
+# Original book figures are NOT included
+
+# -------- OPENCLAW / AGENT ARTIFACTS --------
+.openclaw/
+.openclaw_cache/
+*.session
+*.log
+logs/
+heartbeat*.md
+state/
+tasks/backlog*.md
+
+# OS
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.fuse_hidden*
+.Trash-*
+
+# IDE
+.vscode/
+.idea/
+*.sublime-*
+
+# Confidential / personal
+credentials/
+secrets/
+*.pem
+*.key
