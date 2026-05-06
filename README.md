@@ -148,9 +148,9 @@ python scripts/pozar/pozarch4_impedance_matching.py
 如果本项目对您有帮助，欢迎请作者喝杯咖啡 ☕️
 
 <div align="center">
-  <img src="assets/images/sponsor_wechat_qr.png" width="250" alt="微信赞赏码">
+  <img src="assets/sponsor_wechat_qr.png" width="250" alt="微信赞赏码">
   &nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="assets/images/sponsor_alipay_qr.png" width="250" alt="支付宝赞赏码">
+  <img src="assets/sponsor_alipay_qr.png" width="250" alt="支付宝赞赏码">
 </div>
 
 ---
