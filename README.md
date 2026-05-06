@@ -139,15 +139,19 @@ python scripts/pozar/pozarch4_impedance_matching.py
 如果这个项目对你的学习或研究有帮助，欢迎通过以下方式支持：
 
 ### GitHub Sponsors
-[![GitHub Sponsor](https://img.shields.io/badge/GitHub-Sponsor-ea4aaa?style=for-the-badge&logo=github)](https://github.com/sponsors/yourusername)
+[![GitHub Sponsor](https://img.shields.io/badge/GitHub-Sponsor-ea4aaa?style=for-the-badge&logo=github)](https://github.com/sponsors/libowen1987-design)
 
 ### Buy Me a Coffee
-[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee)](https://www.buymeacoffee.com/yourusername)
+[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee)](https://www.buymeacoffee.com/libowen1987-design)
 
 ### 微信 / 支付宝赞赏码
-> 赞赏码图片放置于此（可选）：
-> `assets/images/sponsor_wechat_qr.png` （请自行添加）
-> `assets/images/sponsor_alipay_qr.png` （请自行添加）
+如果本项目对您有帮助，欢迎请作者喝杯咖啡 ☕️
+
+<div align="center">
+  <img src="assets/images/sponsor_wechat_qr.png" width="250" alt="微信赞赏码">
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="assets/images/sponsor_alipay_qr.png" width="250" alt="支付宝赞赏码">
+</div>
 
 ---
 
