@@ -122,9 +122,10 @@ python study_notes/pozar/code/pozarch04_examples.py
 [![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee)](https://www.buymeacoffee.com/yourusername)
 
 ### 微信 / 支付宝赞赏码
-> 赞赏码图片放置于此（可选）：
-> ![WeChat QR](assets/sponsor_wechat_qr.png)
-> ![Alipay QR](assets/sponsor_alipay_qr.png)
+
+> 感谢您的支持！
+>
+> <img src="assets/sponsor_wechat_qr.png" width="200" alt="WeChat QR" /> <img src="assets/sponsor_alipay_qr.png" width="200" alt="Alipay QR" />
 
 ---
 
