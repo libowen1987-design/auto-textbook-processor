@@ -23,7 +23,7 @@
 本项目是本人历时多年积累的**电磁场与微波技术**学习资源库，包含：
 
 - 📚 **27本电磁学经典教材**的系统性学习笔记（Markdown + LaTeX 公式）
-- 💻 **300+ 个可运行的 Python 仿真程序**（覆盖传输线、天线、FDTD、FEM、散射等）
+- 💻 **350+ 个可运行的 Python 仿真程序**（覆盖传输线、天线、FDTD、FEM、散射等）
 - 📊 **1,200+ 张科学图表**（由代码生成，非扫描件，展示电磁场分布、频响特性、史密斯圆图等）
 - ⚡ **OpenClaw 工作流技能**（`textbook-digitizer.skill`）用于自动化教材数字化
 
@@ -58,7 +58,7 @@ auto-textbook-processor/
 │   └── {book_name}/
 │       ├── notes/                 .md 中英双语笔记
 │       ├── code/                  .py 例题复现代码
-│       └── figures/               .png 科学图表
+│       └── figures/               .png 科学图表（本地，未推送GitHub）
 │
 ├── assets/                        # 项目资产
 │   ├── sponsor_alipay_qr.png      # 支付宝赞赏码
@@ -82,20 +82,20 @@ pip install scienceplots
 
 ```bash
 # 复现 Pozar 微波工程 第4章 阻抗匹配实例
-python scripts/pozar/pozarch4_impedance_matching.py
+python study_notes/pozar/code/pozarch04_examples.py
 
 # 生成 Balanis 天线方向图
-python scripts/balanis/balanis_ch4_pattern_synthesis.py
+python study_notes/balanis/code/balanisch06_examples.py
 
 # FDTD 电磁场传播可视化
-python scripts/taflove/fdtd_2d_tezwave.py
+python study_notes/taflove/code/taflove_fdtd_1d.py
 ```
 
 ### 生成图表
 
 ```bash
-python scripts/pozar/pozarch4_impedance_matching.py
-# 输出: assets/images/pozar_ch4_matching.png
+python study_notes/pozar/code/pozarch04_examples.py
+# 输出: study_notes/pozar/figures/ex04_01_series_impedance.png
 ```
 
 ---
@@ -104,9 +104,9 @@ python scripts/pozar/pozarch4_impedance_matching.py
 
 | 指标 | 数量 |
 |------|:----:|
-| 覆盖教材 | **29 本** |
-| Python 代码文件 | **300+ 个** |
-| 生成图表 | **700+ 张** |
+| 覆盖教材 | **27 本** |
+| Python 代码文件 | **350+ 个** |
+| 生成图表 | **1,200+ 张** |
 | 覆盖章节 | **342 章节**  
 | OpenClaw Skill | **1 个** |
 
