@@ -1,0 +1,755 @@
+# Kraus《Antennas》2nd Edition — Chapter 1
+
+## Chapter 1: Introduction
+
+1-1 INTRODUCTION. Since Hertz and Marconi, antennas have become
+
+increasingly important to our society until now they are indispensable. They are
+
+everywhere: at our homes and workplaces, on our cars and aircraft, while our
+
+ships, satellites and spacecraft bristle with them. Even as pedestrians, we carry
+
+Although antennas may seem to have a bewildering, almost infinite variety.
+
+they all operate according to the same basic principles of electromagnetics. The
+
+aim of this book is to explain these principles in the simplest possible terms and
+
+illustrate them with many practical examples. In some situations intuitive
+
+approaches will suffice while in others complete rigor is needed. The book pro-
+
+vides a blend of both with selected examples illustrating when to use one or the
+
+This chapter provides an historical background while Chap. 2 gives an
+
+introduction to basic concepts. The chapters that follow develop the subject in
+
+1-2 THE ORIGINS OF ELECTROMAGNETIC THEORY AND
+
+THE FIRST ANTENNAS.! Six hundred years before Christ, a Greek mathe-
+
+matician, astronomer and philosopher, Thales of Miletus, noted that when amber
+
+is rubbed with silk it produces sparks and has a seemingly magical power to
+
+J.D. Kraus, “Antennas Since Hertz and Marconi,” IEEE Trans. Ants. Prop, AP-33, 131-137, 1985.
+
+See also references at end of chapter.
+
+2 1 INTRODUCTION 12 THE ORIGINS OF ELECTROMAGNETIC THEORY AND THE FIRST ANTENNAS 3
+
+Mtact particles of fluff and straw. The Greek word for amber is elektron and magnetism and founded the science of electromagnetics. He postulated that light
+
+Hm this we get our words electricity, electron and electronics. Thales also noted was electromagnetic in nature and that electromagnetic radiation of other wave-
+
+“the attractive power between pieces of a natural magnetic rock called loadstone, - lengths should be possible.
+
+found at a place called Magnesia, from which is derived the words magnet and Maxwell unified electromagnetics in the same way that Isaac Newton
+
+magnetism. Thales was a pioneer in both electricity and magnetism but his inter- unified mechanics two centuries earlier with his famous Law of Universal Gravi-
+
+est, like that of others of his time, was philosophical rather than practical, and it tation governing the motion of all bodies both terrestrial and celestial.
+
+28 22 centuries before these phenomena were investigated in a serious experi- Although Maxwell's equations are of great importance and, with boundary,
+
+mental way. continuity and other auxiliary relations, form the basic tenets of modern electro-
+
+It remained for William Gilbert of England in about A.D. 1600 to perform magnetics, many scientists of Maxwell's time were skeptical of his theories. It was
+
+the first systematic experiments of electric and magnetic phenomena, describing more than a decade before his theories were vindicated by Heinrich Rudolph
+
+his experiments in his celebrated book, De Magnete. Gilbert invented the electro- Hertz.
+
+scope for measuring electrostatic effects. He was also the first to recognize that Early in the 1880s the Berlin Academy of Science had offered a prize for
+
+the earth itself is a huge magnet, thus providing new insights into the principles research on the relation between electromagnetic forces and dielectric polariz-
+
+of the compass and dip needle. ation. Heinrich Hertz considered whether the problem could be solved with oscil-
+
+In experiments with electricity made about 1750 that led to his invention of lations using Leyden jars or open induction coils. Although he did not pursue
+
+the lightning rod, Benjamin Franklin, the American scientist-statesman, estab- this problem, his interest in oscillations had been kindled and in 1886 as pro-
+
+lished the law of conservation of charge and determined that there are both posi- fessor at the Technical Institute in Karlsruhe he assembled apparatus we would
+
+tive and negative charges. Later, Charles Augustin de Coulomb of France now describe as a complete radio system with an end-loaded dipole as transmit-
+
+measured electric and magnetic forces with a delicate torsion balance he invent- ting antenna and a resonant square loop antenna as receiver. When sparks were
+
+ed. During this period Karl Friedrich Gauss, a German mathematician and produced at a gap at the center of the dipole, sparking also occurred at a gap in
+
+astronomer, formulated his famous divergence theorem relating a volume and its the nearby loop. During the next 2 years, Hertz extended his experiments and
+
+surface, demonstrated reflection, refraction and polarization, showing that except for their
+
+By 1800 Alessandro Volta of Italy had invented the voltaic cell and, con- much greater length, radio waves were one with light. Hertz turned the tide
+
+necting several in series, the electric battery. With batteries, electric currents against Maxwell around.
+
+could be produced, and in 1819 the Danish professor of physics Hans Christian Hertz’s initial experiments were conducted at wavelengths of about 8 meters
+
+Oersted found that a current-carrying wire caused a nearby compass needle to while his later work was at shorter wavelengths, around. 30 centimeters. Figure
+
+deflect, thus discovering that electricity could produce magnetism. Before Oersted, 1-1 shows Hertz's earliest 8-meter system and Fig. 1-2 a display of his apparatus,
+
+electricity and magnetism were considered as entirely independent phenomena. including the cylindrical parabolic reflector he used at 30 centimeters.
+
+The following year, André Marie Ampére, a French physicist, extended Although Hertz was the father of radio, his invention remained a labora-
+
+Oersted’s observations. He invented the solenoidal coil for producing magnetic tory curiosity for nearly a decade until 20-year-old Guglielmo Marconi, on a
+
+fields and theorized correctly that the atoms in a magnet are magnetized by tiny summer vacation in the Alps, chanced upon a magazine which described Hertz’s
+
+electric currents circulating in them. About this time Georg Simon Ohm of experiments. Young Guglielmo wondered if these Hertzian waves could be used
+
+Germany published his now-famous law relating current, voltage and resistance. to send messages. He became obsessed with the idea, cut short his vacation and
+
+However, it initially met with ridicule and a decade passed before scientists began rushed home to test it.
+
+to recognize its truth and importance. In spacious rooms on an upper floor of the Marconi mansion in Bologna,
+
+Then in 1831, Michael Faraday of London demonstrated that a changing Marconi repeated Hertz’s experiments. His first success late one night so elated
+
+magnetic field could produce an electric current. Whereas Oersted found that him he could not wait until morning to break the news, so he woke his mother
+
+electricity could produce magnetism, Faraday discovered that magnetism could and demonstrated his radio system to her.
+
+produce electricity. At about the same time, Joseph Henry of Albany, New York, Marconi quickly went on to add tuning, big antenna and ground systems
+
+observed the effect independently. Henry also invented the electric telegraph and for longer wavelengths and was able to signal over large distances. In mid-
+
+relay. December 1901, he startled the world by announcing that he had received radio
+
+Faraday's extensive experimental investigations enabled James Clerk
+
+Maxwell, a professor at Cambridge University, England, to establish in a pro-
+
+found and elegant manner the interdependence of electricity and magnetism. In Such EE Ene
+
+his classic treatise of 1873, he published the first unified theory of electricity and " His dipole was called a Hertzian dipole and the radio waves Hertzian waves.
+
+| 12 THE ORIGINS OF ELECTROMAGNETIC THEORY AND THE FIRST ANTENNAS 5
+
+pmenr| signals at St. John’s, Newfoundland, which had been sent across the Atlantic
+
+from a station he had built at Poldhu in Cornwall, England. The scientific estab-
+
+lishment did not believe his claim because in its view radio waves, like light,
+
+2mm should travel in straight lines and could not bend around the earth from England
+
+cz > ° of, ° <> to Newfoundland. However, the Cable Company believed Marconi and served
+
+uv) 2.28 mae 3m we 25 me him with a writ to cease and desist because it had a monopoly on transatlantic
+
+[e)) communication. The Cable Company's stock had plummeted following
+
+4, Marconi’s announcement and it threatened to sue him for any loss of revenue if
+
+j>— 8m | he persisted. However, persist he did, and a legal battle developed that continued
+
+tom for 27 years until finally the cable and wireless groups merged.
+
+\ One month after Marconi’s announcement, the American Institute of Elec-
+
+i trical Engineers (ATEE) held a banquet at New York’s Waldorf-Astoria to cele-
+
+hgh brate the event. Charles Protius Steinmetz, President of the AIEE, was there, as
+
+° was Alexander Graham Bell, but many prominent scientists boycotted the
+
+Figure 1-1 Heinrich Hertz’s complete radio system of 1886 with end-loaded dipole transmitting banquet. Their theories had been challenged and they wanted no part of it.
+
+antenna (CC) and resonant loop receiving antenna (ahed) for 4 ~ 8 m. With induction coil (4) turned Not long after the banquet, Marconi provided irrefutable evidence that
+
+TEER 0B ince” sparks at M ins oop receiving antenna. (Frum Heinrich Herts hack radio waves could bend around the earth. He recorded Morse signals, inked
+
+(<b) automatically on tape, as received from England across almost all of the Atlantic
+
+while steaming aboard the SS Philadelphia from Cherbourg to New York. The
+
+ship's captain, the first officer and many passengers were witnesses.
+
+ge SRRWREN < SABRSAT NES Ot A year later, in 1903, Marconi began a regular transatlantic message service
+
+pe BN SSS . RAS Se between Poldhu, England, and stations he built near Glace Bay, Nova Scotia,
+
+» | es oS oe and South Wellfleet on Cape Cod.
+
+B ra S SEAS NS ne In 1901, the Poldhu station had a fan aerial supported by two 60-meter
+
+3 cd RR She we s Nea ee guyed wooden poles and as receiving antenna for his first transatlantic signals at
+
+ssi : RR St. John’s, Marconi pulled up a 200-meter wire with a kite, working it against an
+
+Corres Renee array of wires on the ground. A later antenna at Poldhu, typicat of antennas at
+
+i oa & x RNs other Marconi stations, consisted of a conical wire cage. This was held up by four
+
+& Ne : ees massive self-supporting 70-meter wooden towers (Fig. 1-3) With inputs of S0
+
+€ NS ‘ENS kilowatts, antenna wires crackled and glowed with corona at night. Local
+
+3 XN S c ok : SS AS RS residents were sure that such fireworks in the sky would alter the weather.
+
+Se Bo Rarely has an invention captured the public imagination like Marconi’s
+
+i . SSS OO REISS wireless did at the turn of the century. We now call it radio but then it was
+
+k, Ae cots Ge SS fess wireless: Marconi’s wireless. After its value at sea had been dramatized by the SS
+
+Bee Lae SC 2 Ss = ee AX Republic and SS Titanic disasters, Marconi was regarded with a universal awe
+
+s aa Qe SS Se ¥ NS and admiration seldom matched. Before wireless, complete isolation enshrouded
+
+See we se ees SY a ship at sea. Disaster could strike without anyone on the shore or nearby: ships
+
+Seo Ae ee ae eo s € being aware that anything had happened. Marconi changed all that. Marconi
+
+Roe i SRP SSS became the Wizard of Wireless.
+
+EQS eR ces a& Although Hertz had used 30-centimeter wavelengths and Jagadis Chandra
+
+~ te Bose and others even shorter wavelengths involving horns and hollow wave-
+
+‘Figure 1-2 Hertz’s sphere-toaded #2 dipole and spark gap (resting on floor in foreground) and Brides, the distance these waves could be detected was limited by the technology
+
+cylindrical parabolic reflector for 30 centimeters (standing at left}. Dipole with spark gap is on the Of the period so these centimeter waves found little use until much later. Radio
+
+parabola focal axis. (Photograph hy Edward C. Jordan) developed at long wavelengths with very long waves favored for long distances. A
+
+Popular “rule-of-thumb” of the period was that the range which could be
+
+6 + aerropucrion 12. THE ORIGINS OF ELECTROMAGNETIC THEORY AND THE FIRST ANTENNAS 7
+
+audions for reception. Following the war, vacuum tubes became available for
+
+(fA transmission; continuous waves replaced spark and radio broadcasting began in
+
+ie the 200 to 600-meter range.
+
+ry . Wavelengths less than 200 meters were considered of little value and were
+
+\f Po relegated to the amateurs. In 1921, the American Radio Relay League sent Paul
+
+as Jf . Godley to Europe to try and receive a Greenwich, Connecticut, amateur station
+
+K\ Pe i operating on 200 meters. Major Edwin H. Armstrong, inventor of the super-
+
+eee He heterodyne receiver and later of FM, constructed the transmitter with the help of
+
+H ERR] a BH several other amateurs. Godley set up his receiving station near the Firth of
+
+He pra Gy ets Clyde in Scotland. He had two receivers, one a 10-tube superheterodyne, and a
+
+Ry Wa a ae Beverage antenna, On December 12, 1921, just 20 years to the day after Marconi
+
+BH Ree EM ay received his first transatlantic signals on a very long wavelength, Godley received
+
+pa Bea Be se messages from the Connecticut station and went on to log over 30 other U.S.
+
+iH er | ie is amateurs. It was a breakthrough, and in the years that followed, wavelengths
+
+be PLRNKUBE aie from 200 meters down began to be used for long-distance communication.
+
+BR each ets EAR Atmospherics were the bane of the long waves, especially in the summer.
+
+TAN emerges atse 1 ets ERS They were less on the short waves but still enough of a problem in 1930 for the
+
+srcnareeee beam T ys E ae od Bell Telephone Laboratories to have Karl G. Jansky study whether they came
+
+Sate : from certain predominant directions. Antennas for telephone service with Europe
+
+soles towers pporssework af wns abs converge tos poh ht above he tasenieg aE ae oe Se ea eae curtain wi
+
+receiving buildings between the towers ; e Jansky constructed a rotating 8-element Bruce curtain with a reflector oper-
+
+ating at 14 meters (Fig. t-4). Although he obtained the desired data on atmo-
+
+spherics from thunderstorms, he noted that in the absence of all such static there
+
+achieved with adequate power was equal to 500 times the wavelength. Thus, for a was always present a very faint hisslike noise or static which moved completely
+
+range of 5000 kilometers, one required a wavelength of 10000 meters. around the compass in 24 hours. After many months of observations, Jansky
+
+At typical wavelengths of 2000 to 20000 meters, the antennas were a small
+
+fraction of a wavelength in height and their radiation resistances only an ohm or adeitiauhs eatidedades Nig “ fe cl ah
+
+less. Losses in heat and corona reduced efficiencies but with the brute power of OO ee ee es
+
+many kilowatts, significant amounts were radiated. Although many authorities a ee ee
+
+favored very tong wavelengths, Marconi may have appreciated the importance of SED
+
+radiation resistance and was in the vanguard of those advocating shorter wave- a
+
+lengths, such as 600 meters. At this wavelength an antenna could have 100 times eT OO ORE
+
+its radiation resistance at 6000 meters. Bt SE Ngeen, Saree i¥ OARS
+
+In 1912 the Wireless Institute and the Society of Radio Engineers merged to 1 ORREIESIGN SHR
+
+form the Institute of Radio Engineers.’ In the first issue of the Institute's Pro- CY wy TENA NORA Te we
+
+ceedings, which appeared in January 1913, it is interesting that the first article RUE Re! a Press Le AN
+
+was on antennas and in particular on radiation resistance. Another Proceedings ih Re LEN EER.
+
+article noted the youthfulness of commercial wireless operators. Most were in ate Aw AS Ya SX “a
+
+their late teens with practically none over the age of 25. Wireless was definitely a wed? gal USL RAE gat SS
+
+young man’s profession. SS A ee Ao
+
+The era before World War I was one of long waves, of spark, are and See . E bet | Sa
+
+alternators for transmission; and of coherers, Fleming valves and De Forest RR ee Beg RE seg o
+
+Figure 1-4 Kari Guthe Jansky and his rotating Bruce curtain antenna with which he discovered
+
+‘ In 1963, the Institute of Radio Engineers and the American Institute of Electrical Engineers merged Jadio emission from our galaxy. (Courtesy Bell Telephone Laboratories; Jansky inset courtesy Mary
+
+to form the Institute of Electrical and Electronic Engineers (IEEE). Jansky Striffler}
+
+12 ELECTROMAGNETIC SPECTREM 9
+
+concluded that it was coming from beyond the earth and beyond the sun. It was
+
+cosmic static coming from our galaxy with the maximum from the galactic
+
+center. Jansky’s serendipitous discovery of extraterrestrial radio waves opened a
+
+new window on the universe. Jansky became the father of radio astronomy.
+
+Jansky recognized that this cosmic noise from our galaxy set a limit to the .
+
+sensitivity that could be achieved with a short-wave receiving system. At 4 SN . ~ CN
+
+meters this sky noise has an equivalent temperature of 20000 kelvins. At centi- a ~nae, ag
+
+meter wavelengths it is less, but never less than 3 kelvins. This is the residual sky & Wo. aN
+
+background levet of the primordial fireball that created the universe as measured as: ; ~~
+
+four decades later by radio astronomers Arno Penzias and Robert Wilson of the « ~ a EAN
+
+Bell Telephone Laboratories at a site not far from the one used by Jansky. a SS & , aes LN
+
+For many years, or until after World War II, only one person, Grote Reber, SS Ne fre KAN
+
+followed up Jansky’s discovery in a significant way. Reber constructed a 9-meter , SIRES Lf \ AOE NY
+
+parabolic reflector antenna (Fig. 1-5) operating at a wavelength of about 2 meters \ S aS Ae \ Sw
+
+which is the prototype of the modern parabolic dish antenna. With it he made BER NS wee AE FAN Se ENR
+
+the first radio maps of the sky. Reber also recognized that his antenna-receiver Be : Ce NE Wi
+
+constituted a radiometer, ie., a temperature-measuring device in which his recei- BOAR . OPP oS IR ww
+
+ver response was related to the temperature of distant regions of space coupled to fy mR ee Re
+
+his antenna via its radiation resistance. Be Re CO RE
+
+With the advent of radar during World War Il, centimeter waves, which ~ ~~ ESR .
+
+had. been abandoned at the turn of the century, finally came into their own and e . Re of NY ee aoe eared
+
+the entire radio spectrum opened up to wide usage. Hundreds of stationary com- i Re A PASO eadeet
+
+munication satellites operating at centimeter wavelengths now ring the earth as \ t <—s oy wy ty .
+
+though mounted on towers 36000 kilometers high. Our probes are exploring the eS om eT *f 2esy oY
+
+solar system to Uranus and beyond, responding to our commands and sending aH ee he Re NG \ ee
+
+back pictures and data at centimeter wavelengths even though it takes more than eS 4 Ss ‘ 2 * aN q
+
+an hour for the radio waves to travel the distance one way. Our radio telescopes tau “ ey’ ot wes. E
+
+operating at millimeter to kilometer wavelengths receive signals from objects so . * Re < eu <
+
+distant that the waves have been traveling for more than [0 billion years. ee EE nto cars ae a
+
+With mankind’s activities expanding into space, the need for antennas will . i ae rs f\ ee Re N t
+
+grow to an unprecedented degree. Antennas will provide the vital links to and SS caf ‘ Af
+
+from everything out there. The future of antennas reaches to the stars. on } . » } Ae. Ns
+
+1-3 ELECTROMAGNETIC SPECTRUM. Continuous wave energy radi- Ps ‘e . if BR Robe & ‘
+
+ated by antennas oscillates at radio frequencies. The associated free-space waves y 2 s hb Fy <a
+
+range in length from thousands of meters at the long-wave extreme to fractions of q ; : 2 ee, vo.
+
+millimeter at the short-wave extreme. The relation of radio waves to the entire nate 4 a “% ae
+
+electromagnetic spectrum is presented in Fig. 1-6. Short radio waves and long ; kh, eee eee Wee
+
+infrared waves overlap into a twilight zone that may be regarded as belonging to Figure 1-8 Grote Reber and his parabolic reflector antenna with which he made the first radio maps
+
+both. of the sky. This antenna, which he built in 1938, is the prototype of the modern dish antenna. (Reber
+
+The wavelength λ of a wave is related to the frequency f and velocity v of ‘inset courtesy Arthur C. Clarke.)
+
+10 1 wntRopucTION 14 DIMENSIONS AND UMTS 11
+
+Optical window windows window 10, designations
+
+rptKN by interstellar gas 2 Or infra re
+
+Aceruen br um a 300 m
+
+Objects ct ] some 322, 23 § 22 § 05 AR caar snot wave 100 EHF} mn
+
+Gifferent sizes mweue = BER Am or Feawoca
+
+tt unre * E ne i ues 30} ka
+
+Gamma rays xrays oles}, INtrared® Radiog iol HE NO sue | ERKu
+
+Wavelength GHe 3 s&
+
+Tore toreet We TeaT TOTO TOTS TeTee Tw TTT ToT8O > Fl | | ee i
+
+anomerers picometers micrometers meters 2 300]
+
+10° temtometers 10°" nanameters 1" — milimeters ™ kilometers 2 00) VHF
+
+10° "8m 10-8 10-3m 103m 2 30!
+
+Figure 1-6 The electromagnetic spectrum with wavelength on a logarithmic scale from the shortest *
+
+gamma rays to the tongest radio waves. The atmospheric-ionospheric opacity is shown at the top Miz 19 HF
+
+with the optical and radio windows in evidence. 3 5 rtd XN
+
+Thus, the wavelength depends on the velocity » which depends on the medium. In 300)
+
+medium. When the medium is free space (vacuum) 30} FL | | fd] CE I rd XI]
+
+v=c=3x 10'ms"! Q) Me
+
+Figure t-7 shows the relation of wavelength to frequency for v = c (free 30 300 3 30 300 3 30 300 3 30 300
+
+space). Many of the uses of the spectrum are indicated along the right-hand edge 00 1 10 mm? 1 10 ee ' me
+
+of the figure. A more detailed frequency use listing is given in Table 1-1. Wavelength (for v=e)
+
+Table 1-1 Radio-frequency band designations Figure 1-7 Wavelength versus frequency for v = c.
+
+Frequency Wavelength Band desigeation
+
+30-300 Hz 10-1 Mm ELF (extremely low frequency) Example of wavelength for a given frequency. For a frequency of 300 MHz the cor-
+
+300-3000 Hz 1 Mm-100 ken responding wavelength is given by
+
+30-300 kHz 10-1 km LF (low frequency) i= = _ nim (3)
+
+300-3000 kHz 1 km-100. m MF (medium frequency) Ff 300 x 10° Hz
+
+scorn |e VEE Cory ny tjuency) In a lossless nonmagnetic dielectric medium with relative permittivity ¢, = 2, the
+
+300-3000 MHz | m-10 cm UHF (ultra high frequency) same wave has a velocity
+
+330 GHz 10-1 cm ‘SHF (super high frequency) © 3x 108 soa
+
+30-300 GHz Lem=1 mm EHF (extremely high frequency) v= = = 212 x 10° ms (4)
+
+300-3000 GHz 1 mm-100 yn ve V2
+
+Frequency Wavelength IEEE Radar Bané designation and A= ; = OF x 70% 7 0.707 m = 707 mm ()
+
+48 GHz 7.53.75 cm c Pras .
+
+8-12 GHz 3.75-2.50 em x 1-4 DIMENSIONS AND UNITS. Lord Kelvin is reported to have said:
+
+12-18 GHz 2.50-1.67 em ke
+
+18-27 GHz 167-11 em K ‘When you can measure what you are speaking about and express it in numbers you
+
+27-40 GHz Ll ¢m-7.5mm Ka know something about it; but when you cannot measure it, when you cannot
+
+40-300 GHz 75-10 mm mm é*press it in numbers your knowledge is of a meagre and unsatisfactory kind; it may
+
+12. wrropucrion L6 HOW TO READ THE SYMBOLS AND NoTATION 13
+
+be the beginning of knowledge but you have scarcely progressed in your thoughts to much more constant and is now the standard. The two standards differ by about 1
+
+the stage of science whatever the matter may be. second per year.
+
+A . . Ampere {A). Electric current which if flowing in two infinitely long parallel wires in
+
+To this it might be added that before we can measure something, we must define
+
+vacuum separated by 1 meter produces a force of 200 nanonewtons per meter of
+
+its dimensions and provide some standard, or reference unit, in terms of which length (200 aN m-! a 2x 10 N m~*). »
+
+the quantity can be expressed numerically.
+
+A dimension defines some physical characteristic. For example, length, mass, Kelvin (K). Temperature equat to 1/273.16 of the triple point of water {or triple
+
+time, velocity and force are dimensions. The dimensions of length, mass, time, point of water equals 273.16 kelvins).'
+
+lectrie ¢ rom cipys °
+
+i” “ unrents wemper a h and luminous ene data considered as the funda ‘Candela (cd). Luminous intensity equal to that of 1/600000 square meter of a perfect
+
+n mensions since other dimensions can lefined in terms of these six. radiator at the temperature of freezing platinum.
+
+This choice is arbitrary but convenient. Let the letters L, M, T, 1, ZT and &
+
+represent the dimensions of length, mass, time, electric current, temperature and The units for other dimensions are called secondary or derived units and are
+
+luminous intensity. Other dimensions are then secondary dimensions. For based on these fundamental units.
+
+example, area is a secondary dimension which can be expressed in terms of the The material in this book deals principally with the four fundamental
+
+fundamental dimension of length squared (£2). As other examples, the fundamen- dimensions length, mass, time and electric current (dimensional symbols L, M, T
+
+tal dimensions of velocity are L/T and of force are ML/T?. and 1). The four fundamental units for these dimensions are the basis of what was
+
+A unit is a standard or reference by which a dimension can be expressed formerly called the meter-kilogram-second-ampere (mksa) system, now a sub-
+
+numerically. Thus, the meter is a unit in terms of which the dimension of length system of the SI. The book also includes discussions of temperature but no refer-
+
+can be expressed and the kilogram is a unit in terms of which the dimension of ences to luminous intensity.
+
+mass can be expressed. For example, the length (dimension) of a steel rod might The complete SI invoives not only units but also other recommendations,
+
+be 2 meters and its mass (dimension) S kilograms. one of which is that multiples and submultiples of the SI units be stated in steps
+
+of 10° or 1073. Thus, the kilometer (1 km = 10°? m) and the millimeter (1
+
+10-3 ferred units of length, but the centimeter (= 107? m) is not.
+
+1-8 FUNDAMENTA i mam = 10°” m) are pre ts of length, but the (=10 ;
+
+AMENTAL AND SECONDARY UNITS. The units for the For example, the proper SI designation for the width of motion-picture film is
+
+fundamentat dimensions are called the fundamental or base units. In this book the 35 mm, not 3.5 cm.
+
+International System of Units, abbreviated SI, is used.’ In this system the meter. ~ reer ” j :
+
+u Samerennas . In this book rationalized SI units are used. The rationalized system has the
+
+kilogram, second, ampere, the si - : " :
+
+gram, id, ampere, kelvin and candela are the base units for the six funda advantage that the factor 4x does not appear in Maxwell’s equations (App. A),
+
+mental dimensions of length, mass, time, clectric current, temperature and Jumin- A ‘ A its i
+
+Fi : an although it does appear in certain other relations. A complete table of units in
+
+ous intensity. The definitions for these fundamental units are: woe . .
+
+this system is given in the Appendix of Electromagnetics, 3rd ed., by J. D. Kraus
+
+Meter (mm). Length equal to 1 650763.73 wavelengths in vacuum corresponding to (McGraw-Hill, 1984).
+
+the 2p,o-Sd, transition of krypton-86,
+
+q 14 HOW TO READ THE SYMBOLS AND NOTATION. In this
+
+Kilogram (keh Equal to mass of intematonal prototype kilogram, platinum. book quantities, or dimensions, which are scalars, like charge Q, mass M or resis-
+
+ind woe the Stivece wnt jévres, France. This standard kilogram is the only artifact tance R, are always in italics. Quantities which may be vectors or scalars are
+
+° boldface as vectors and italics as scalars, e.g., electric field E (vector) or & (scalar).
+
+Second (5). Equal to time duration of 9 192631 770 periods of radiation correspond- Unit, vectors are always boldface with a hat (circumflex) over the letter, e.g. X
+
+ing to the transition between two hyperfine levels of the ground state of cesium-133. ore.
+
+The second was formerly defined as 1/8640 part of a mean solar day. The earth's
+
+rotation rate is gradually slowing down, but the atomic (cesium-133) transition is
+
+' Note that the symbol for degrees is not used with kelvins. Thus, the boiling temperature of water
+
+SSS (100°C) is 373 kelvins (373 K), nor 373°K. However, the degree sign is retained with degrees Celsius.
+
+The International System of Units is the modernized version of the metric system. The abbreviation 2 . j -
+
+SI is from the French name Systeme Internationale dUnités, For the complete official description of In longhand notation a vector may be indicated by a bar over the letter and hat (“) over the unit
+
+‘the system see U.S. Natl. Bur. Stand. Spec. Pub. 330, 1971. Sector.
+
+141 inTRoDUCTION rererences 15
+
+Units are in roman type, ie. not italic; for example, H for henry, s for 1-8 DIMENSIONAL ANALYSIS. It is a necessary condition for correct-
+
+second, or A for ampere.! The abbreviation for a unit is capitalized if the unit is ness that every equation be balanced dimensionally. For example, consider the
+
+derived from a proper name; otherwise it is lowercase (small letter). Thus, we hypothetical formula
+
+have C for coulomb but m for meter. Note that when the unit is written out, it is M
+
+always lowercase even though derived from a proper name. Prefixes for units are Ts DA
+
+also roman, like n in nC for nanocoulomb or M in MW for megawatt.
+
+Example 1. D =% 200 pC m=? L=length
+
+means that the electric Hux density D is a vector in the positive x direction with a D = density (mass per unit volume}
+
+magnitude of 200 picocoulombs per square meter (=2 x 107! coulomb per square A = area
+
+meter), The dimensional symbols for the left side are M/L, the same as those used. The
+
+dimensional symbols for the right side are
+
+means that the voltage V equals 10 volts. Distinguish carefully between V (italics) SPs
+
+for voltage, V (roman) for volts, v (lowercase, boldface) for velocity and » (lowercase, E L
+
+italics) for volume. Therefore, both sides of this equation have the dimensions of mass per length,
+
+kxarple 3. Se4Wm? He and the equation is balanced dimensionally. This is not a guarantee that the
+
+equation is correct; ie, it is not a sufficient condition for correctness. It is,
+
+means that the flux density S (a scalar) equals 4 watts per square meter per hertz. however, a necessary condition for correctness, and it is frequently helpful to
+
+This can also be written $= 4 W/m?/Hz or 4 W/(m? Hz), but the form Wm 2 analyze equations in this way to determine whether or not they are dimensionally
+
+Hz~! is more direct and less ambiguous. balanced,
+
+Such dimensional analysis is also useful for determining what the dimensions
+
+Note that for conciseness, prefixes are used where appropriate instead c of a quantity are. For example, to find the dimensions of force, we make use of
+
+exponents. Thus, a velocity would be expressed in prefix form as y= 215 Mm s~* Newton's second law that
+
+(215 megameters per second) not in the exponential form 2.15 x 10° ms” .
+
+However, in solving a problem the exponential would be used although the final] Force = mass x acceleration
+
+answer might be put in the prefix form (215 Mm s~*) Since acceleration has the dimensions of length per time squared, the dimensions
+
+The modernized metric (SI) units and the conventions used herein combi of force are
+
+to give a concise, exact and unambiguous notation, and if one is attentive to t
+
+details, it will be seen to possess both elegance and beauty. Mass x length
+
+SOUA' . or in dimensional symbols
+
+1-7, EQUATION NUMBERING. Important equations and those referred] ”
+
+to in the text are numbered consecutively beginning with each section. When} F _ML
+
+reference is made to an equation in a different section, its number is preceded by| oree = pe
+
+the chapter and section number. Thus, (14-15-3) refers to Chap. 14, See. 15,
+
+Eq. (3). A reference to this same equation within Sec. 15 of Chap. 14 would read|
+
+simply (3). Note that chapter and section numbers are printed at the top of cacl REFERENCES
+
+page. Bose, Jagadis Chandra: Collected Physical Papers, Longmans, Green, 1927.
+
+7 Bose, Jagadis Chandra: “On a Complete Apparatus for the Study of the Properties of Electric
+
+Waves,” Elect. Engr. (Lond.), October 1896.
+
+Brown, George H.: “ Marconi,” Cosmic Searck, 2, $-8, Spring 1980.
+
+oe ie Dunlap, Orrin E.: Marconi—The Man and His Wireless, Macmillan, 1937.
+
+* In longhand notation no distinction is usually made between quantities {italics} and units (roman) Faraday, Michael: Experimental Researches in Electricity, B. Quaritch, London, 1855
+
+However, it can be done by placing a bar under the letter to indicate italics or writing the letter with Gundlach, Friedrich Wilhelm: “Die Technik der kiirzesten elecktromagnetischen Wellen seit Hein-
+
+distinet slant rich Hertz,” Elektrotech. Zeit. (ETZ), 7, 246, 1957.
+
+16 1 ntRODUCTION CHAPTER
+
+Hertz, Heinrich Rudolph: * Uber Strahlen elecktrischer Kraft,” Wiedemanns Ann. Phys., 36, 169-783,
+
+Hertz, Heinrich Rudolph: Electric Waves, Macmillan, London, 1893; Dover, 1962.
+
+Hertz, Heinrich Rudolph: Collected Works, Barth Verlag, 1895.
+
+Hertz, Heinrich Rudolph: “The Work of Hertz and His Successors—Signalling through Space ——
+
+without Wires,” Electrician Publications, 1894, 1898, 1900, 1908.
+
+Hertz, Johanna: Heinrich Hertz, San Francisco Press, {977 (memoirs, letters and diaries of Hertz).
+
+Kraus, John D.: Big Ear, Cygnus-Quasar, 1976. BASIC
+
+Kraus, John D.: "Karl Jansky and His Discovery of Radio Waves from Our Galaxy,” Cosmic Search,
+
+3\no. 4, 8-12, 1981, ANTENNA
+
+Kraus, John. D.: "Grote Reber and the First Radio Maps of the Sky,” Cosmic Search, 4, no. 1, 14-18, CONCEPTS
+
+Kraus, John D.: "Karl Guthe Jansky's Serendipity, Its Impact on Astronomy and Its Lessons for the
+
+Future,” in K. Kellerman and B. Sheets (eds.), Serendipitous Discoveries in Radio Astronomy,
+
+National Radio Astronomy Observatory, 1983
+
+Kraus, John D.: Electromagnetics, 3ed ed., McGraw-Hill, 1984
+
+Kraus, John D.: “Antennas Since Hertz and Marconi,” IEEE Trans. Ants. Prop, AP-33, 131-132,
+
+February 1985 (Centennial Plenary Session Paper).
+
+Kraus, John D.: Radio Astronomy, 2nd ed., Cygnus-Quasar, 1986; Sec. 1-2 on Jansky, Reber and
+
+Kraus, John D.: “Heinrich Hertz—Theorist and Experimenter,” IEEE Trans. Microwave Theory
+
+Tech, Hertz Centennial Issue, MTT-36, May 1988.
+
+Lodge, Oliver J.: "Signalling through Space without Wires,” Electrician Publications, 1898,
+
+Marconi, Degna: My Father Marconi, McGraw-Hill, 1962.
+
+Maxwell, James Clerk: A Treatise on Electricity and Magnetism, Oxford, 1873, 1906. . . ar
+
+Newton, Isaac: Principia, Cambridge, 1687. 2-1 INTRODUCTION. The purpose of this chapter is to provide intro-
+
+Poincaré, Henri, and F. K. Vreeland: Maxwell's Theory and Wireless Telegraphy, Constable, ductory insights into antennas and their characteristics. Following a section on
+
+London, 1905. definitions, the basic parameters of radiation resistance, temperature, pattern,
+
+Ramsey, John Fe [Merovaye Antenna and Waveguide Techniques before 1900,” Proc. IRE, 46, directivity, gain, beam area and aperture are introduced. From the aperture
+
+405-415, February 1958, Ys ga" P - vo ae i
+
+Rayleigh, Lord: “On the Passage of Electric Waves through Tubes or the Vibrations of Dielectric concept it is only a few steps to the important Friis transmission formula. This is
+
+Cylinders,” Phil. Mag., 43, 125-132, February 1897. followed by a discussion of sources of radiation, field zones around an antenna
+
+Righi, A: * L'Otticw della Oscillazioni Elettriche,” Zanichelli, Bologna, 1897. and the effect of shape on impedance. The sources of radiation are illustrated for
+
+Rothe, Horst: "Heinrich Hertz, der Enidecker der elektromagnetischen Wellen.” Elektrotech. Zeit. both transient (pulse) and continuous waves. The chapter concludes with a dis-
+
+(EZ), 7, 247-251, 1957. 5 nae .
+
+Wolf, Franz: "Heintich Hertz, Leben and Werk,” Elektrotech. Zeit (ETZ), 7, 242-246, 1957 cussion of polarization and cross-field.
+
+2-2, DEFINITIONS. A radio antenna! may be defined as the structure
+
+associated with the region of transition between a guided wave and a free-space
+
+wave, or vice versa.
+
+In connection with this definition it is also useful to cousider what is meant
+
+by the terms transmission line and resonator.
+
+A transmission line is a device for transmitting or guiding radio-frequency
+
+energy from one point to another. Usually it is desirable to transmit the energy
+
+' In its zoological sense, an antenna is the feeler, or organ of touch, of an insect. According to usage
+
+in the United States the plural of “insect antenna™ is “antennae,” but the plural of "radio antenna
