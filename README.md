@@ -52,3 +52,7 @@ Kraus · 梁昌洪(Liang) · 廖承恩(Liao) · 谢处方(Xie) · Landau · 郭�
 
 ## License
 MIT
+
+## Assets
+- `assets/sponsor_alipay_qr.png` — Alipay QR code
+- `assets/sponsor_wechat_qr.png` — WeChat QR code
