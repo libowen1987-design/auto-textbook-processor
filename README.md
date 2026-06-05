@@ -1,51 +1,54 @@
-# 📚 电磁神教 — 经典教材数字化图书馆
+# Auto Textbook Processor
 
-**27本经典电磁学教材的全套数字化学习资源**
+**27 classic EM & microwave textbooks — bilingual notes & Python reproduction.**
 
-> 涵盖微波工程、天线理论、电磁兼容、计算电磁学、RF电路设计、电动力学等核心领域
+Covers microwave engineering, antenna theory, EMC, computational electromagnetics, RF circuit design, and electrodynamics.
 
 ---
 
-## 📂 项目结构（唯一）
+## Structure
 
 ```
 auto-textbook-processor/
-├── study_notes/          ← 全部教材资源
-│   ├── {book}/           ← 27本教材，各自独立
-│   │   ├── notes/        .md 中英双语笔记
-│   │   ├── code/         .py 例题复现代码
-│   │   └── figures/      .png 科学图表（本地）
+├── openclaw_skills/       Textbook digitization pipeline
+│   ├── SKILL.md           Workflow definition (6 phases)
+│   ├── references/        OCR, templates, audit guidelines
+│   └── textbook-digitizer.skill
+├── study_notes/           27 textbooks, each with:
+│   ├── {book}/
+│   │   ├── notes/         .md bilingual notes (Chinese + English)
+│   │   ├── code/          .py example reproduction code
+│   │   └── figures/       .png scientific plots (local)
 │   └── ...
-├── assets/               ← 项目资产
-├── README.md
-└── LICENSE
+├── assets/                Project assets
+└── README.md
 ```
 
-> **说明：** 本项目采用 **study_notes/{book}/notes/** 统一架构。原 `scripts/` 目录已合并至各教材的 `code/` 子目录中，消除所有冗余。
+> Note: The original `scripts/` directory has been merged into each textbook's `code/` subdirectory to eliminate redundancy.
 
-## 📖 教材总表（27本）
+## Textbook List (27)
 
-### 文字版（21本）
-Pozar《微波工程》4th · Balanis《天线理论》3rd · Collins《微波基础》2nd · Bogatin《信号完整性》2nd · Bondeson《计算电磁学》 · Cheng《电磁场与波》 · Chew《CEM快速算法》 · Griffiths《电动力学导论》4th · Harrington《时谐电磁场》 · Hemming · Houle《FDTD Python仿真》 · Jackson《经典电动力学》3rd · Jin《计算电磁场》2nd · Ludwig《RF电路设计》2nd · Paul《电磁兼容》2nd · Razavi《RF微电子》2nd · Sadiku《电磁学基础》6th · Sheng《CEM精要》 · Taflove《FDTD计算电动力学》3rd · Tsang《电磁波散射》 · Zhang《航天器电磁兼容》
+### Text-based (21)
+Pozar · Balanis · Collins · Bogatin · Bondeson · Cheng · Chew · Griffiths · Harrington · Hemming · Houle · Jackson · Jin · Ludwig · Paul · Razavi · Sadiku · Sheng · Taflove · Tsang · Zhang
 
-### 扫描版（6本）
-Kraus《天线》2nd · 梁昌洪《简明微波》 · 廖承恩《微波技术基础》 · 谢处方《电磁场与电磁波》4th · Landau《连续介质电动力学》 · 郭硕鸿《电动力学》3rd
+### Scanned + OCR (6)
+Kraus · 梁昌洪(Liang) · 廖承恩(Liao) · 谢处方(Xie) · Landau · 郭硕鸿(Guo)
 
-## 📊 全库统计
-| 指标 | 本地 | 远程(GitHub) |
-|:-----|:----:|:------------:|
-| 教材数 | 27 | 27 |
-| 笔记 (.md) | 369 | 337 |
-| 代码 (.py) | 352 | 321 |
-| 图表 (.png) | 1,293 | — |
-| 中英双语 | 100% | 100% |
-| Python 语法 | 0错误 | 0错误 |
+## Statistics
+| Metric | Local | Remote (GitHub) |
+|--------|-------|-----------------|
+| Textbooks | 27 | 27 |
+| Notes (.md) | 369 | 337 |
+| Code (.py) | 352 | 321 |
+| Figures (.png) | 1,293 | — |
+| Bilingual coverage | 100% | 100% |
+| Python syntax errors | 0 | 0 |
 
-## 🔧 技术栈
-- 笔记: Markdown + LaTeX (MathJax)
-- 代码: Python 3 + NumPy/SciPy/Matplotlib
-- 微波工具: scikit-rf
+## Tech Stack
+- Notes: Markdown + LaTeX (MathJax)
+- Code: Python 3 + NumPy/SciPy/Matplotlib
+- Microwave tools: scikit-rf
 - OCR: Tesseract 5.3 + PyMuPDF
 
-## 📜 许可
-MIT License
+## License
+MIT

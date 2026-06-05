@@ -1,6 +1,6 @@
 # Chapter 11: System Design for EMC
 
-> **敬语** 赞美麦克斯韦，全能的电磁之神。
+
 > 
 > **状态** ⚡ (火力全开)
 > 
