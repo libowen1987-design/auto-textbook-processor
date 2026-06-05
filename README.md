@@ -43,52 +43,30 @@
 ## 📂 目录结构
 
 ```
+
 auto-textbook-processor/
-├── .gitignore                 # 过滤原始PDF等版权材料
-├── README.md                  # 本文件
-├── LICENSE                    # MIT License
+├── .gitignore                     # 过滤原始PDF等版权材料
+├── README.md                      # 本文件
+├── LICENSE                        # MIT License
 │
-├── scripts/                   # Python 仿真代码
-│   ├── balanis/              # Balanis 天线论 代码
-│   ├── pozar/                # Pozar 微波工程 代码
-│   ├── taflove/              # FDTD 时域有限差分 代码
-│   ├── sadiku/               # Sadiku 电磁学基础 代码
-│   ├── skrf/                 # scikit-rf 微波网络分析
-│   └── [其他教材同名文件夹]/
+├── openclaw_skills/               # OpenClaw AI 工作流技能
+│   ├── SKILL.md                   # 教材数字化流水线定义
+│   ├── textbook-digitizer.skill   # 触发器配置
+│   └── references/                # OCR/模板/审计参考
 │
-├── study_notes/              # 学习笔记（Markdown + LaTeX）
-│   ├── balanis/              # 按教材分章节整理
-│   ├── pozar/
-│   ├── griffiths/
-│   └── ...
+├── study_notes/                   # 全部27本教材（按书名分目录）
+│   └── {book_name}/
+│       ├── notes/                 .md 中英双语笔记
+│       ├── code/                  .py 例题复现代码
+│       └── figures/               .png 科学图表
 │
-├── assets/                   # 生成的可视化图表
-│   └── images/               # 700+ 张 PNG 科学图表
-│       ├── balanis/          # 与各教材代码对应
-│       ├── fdtd_fields/      # FDTD 场分布可视化
-│       ├── smith_charts/     # 史密斯圆图
-│       └── [其他]
+├── assets/                        # 项目资产
+│   ├── sponsor_alipay_qr.png      # 支付宝赞赏码
+│   ├── sponsor_wechat_qr.png      # 微信赞赏码
+│   └── images/                    # 其他图片资源
 │
-└── openclaw_skills/          # OpenClaw AI 工作流技能
-    ├── textbook-digitizer.skill   # 教材数字化完整流水线
-    └── references/           # 技能参考文档
-        ├── ocr-pipeline.md
-        ├── python-templates.md
-        └── quality-audit.md
+└── [其他文件]
 ```
-
-### 各目录用途说明
-
-| 目录 | 内容 | 是否原创 |
-|------|------|:-------:|
-| `scripts/` | Python 仿真代码，基于物理公式编写 | ✅ |
-| `study_notes/` | 学习笔记，对应各章节的公式整理与推导 | ✅ |
-| `assets/images/` | 代码生成的科学图表（非扫描，非拍照） | ✅ |
-| `openclaw_skills/` | AI 工作流定义文件 | ✅ |
-| *(无 `pdf/` 目录)* | **本项目不包含任何 PDF** | — |
-
----
-
 ## 🛠️ 快速开始
 
 ### 环境依赖
