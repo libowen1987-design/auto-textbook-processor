@@ -1,6 +1,6 @@
 # 🔬 Auto-Textbook-Processor & Electromagnetism Notes
 
-> **27本电磁学经典教材的 Python 复现 · 1,200+ 张科学图表 · 350+ 份可运行代码**
+> **29本电磁学经典教材的 Python 复现 · 700+ 张科学图表 · 300+ 份可运行代码**
 
 [![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
@@ -22,9 +22,9 @@
 
 本项目是本人历时多年积累的**电磁场与微波技术**学习资源库，包含：
 
-- 📚 **27本电磁学经典教材**的系统性学习笔记（Markdown + LaTeX 公式）
-- 💻 **350+ 个可运行的 Python 仿真程序**（覆盖传输线、天线、FDTD、FEM、散射等）
-- 📊 **1,200+ 张科学图表**（由代码生成，非扫描件，展示电磁场分布、频响特性、史密斯圆图等）
+- 📚 **29本电磁学经典教材**的系统性学习笔记（Markdown + LaTeX 公式）
+- 💻 **300+ 个可运行的 Python 仿真程序**（覆盖传输线、天线、FDTD、FEM、散射等）
+- 📊 **700+ 张科学图表**（由代码生成，非扫描件，展示电磁场分布、频响特性、史密斯圆图等）
 - ⚡ **OpenClaw 工作流技能**（`textbook-digitizer.skill`）用于自动化教材数字化
 
 ### 覆盖的主要教材
@@ -43,30 +43,52 @@
 ## 📂 目录结构
 
 ```
-
 auto-textbook-processor/
-├── .gitignore                     # 过滤原始PDF等版权材料
-├── README.md                      # 本文件
-├── LICENSE                        # MIT License
+├── .gitignore                 # 过滤原始PDF等版权材料
+├── README.md                  # 本文件
+├── LICENSE                    # MIT License
 │
-├── openclaw_skills/               # OpenClaw AI 工作流技能
-│   ├── SKILL.md                   # 教材数字化流水线定义
-│   ├── textbook-digitizer.skill   # 触发器配置
-│   └── references/                # OCR/模板/审计参考
+├── scripts/                   # Python 仿真代码
+│   ├── balanis/              # Balanis 天线论 代码
+│   ├── pozar/                # Pozar 微波工程 代码
+│   ├── taflove/              # FDTD 时域有限差分 代码
+│   ├── sadiku/               # Sadiku 电磁学基础 代码
+│   ├── skrf/                 # scikit-rf 微波网络分析
+│   └── [其他教材同名文件夹]/
 │
-├── study_notes/                   # 全部27本教材（按书名分目录）
-│   └── {book_name}/
-│       ├── notes/                 .md 中英双语笔记
-│       ├── code/                  .py 例题复现代码
-│       └── figures/               .png 科学图表（本地，未推送GitHub）
+├── study_notes/              # 学习笔记（Markdown + LaTeX）
+│   ├── balanis/              # 按教材分章节整理
+│   ├── pozar/
+│   ├── griffiths/
+│   └── ...
 │
-├── assets/                        # 项目资产
-│   ├── sponsor_alipay_qr.png      # 支付宝赞赏码
-│   ├── sponsor_wechat_qr.png      # 微信赞赏码
-│   └── sponsor_*.png              # 赞赏二维码
+├── assets/                   # 生成的可视化图表
+│   └── images/               # 700+ 张 PNG 科学图表
+│       ├── balanis/          # 与各教材代码对应
+│       ├── fdtd_fields/      # FDTD 场分布可视化
+│       ├── smith_charts/     # 史密斯圆图
+│       └── [其他]
 │
-└── [其他文件]
+└── openclaw_skills/          # OpenClaw AI 工作流技能
+    ├── textbook-digitizer.skill   # 教材数字化完整流水线
+    └── references/           # 技能参考文档
+        ├── ocr-pipeline.md
+        ├── python-templates.md
+        └── quality-audit.md
 ```
+
+### 各目录用途说明
+
+| 目录 | 内容 | 是否原创 |
+|------|------|:-------:|
+| `scripts/` | Python 仿真代码，基于物理公式编写 | ✅ |
+| `study_notes/` | 学习笔记，对应各章节的公式整理与推导 | ✅ |
+| `assets/images/` | 代码生成的科学图表（非扫描，非拍照） | ✅ |
+| `openclaw_skills/` | AI 工作流定义文件 | ✅ |
+| *(无 `pdf/` 目录)* | **本项目不包含任何 PDF** | — |
+
+---
+
 ## 🛠️ 快速开始
 
 ### 环境依赖
@@ -82,20 +104,20 @@ pip install scienceplots
 
 ```bash
 # 复现 Pozar 微波工程 第4章 阻抗匹配实例
-python study_notes/pozar/code/pozarch04_examples.py
+python scripts/pozar/pozarch4_impedance_matching.py
 
 # 生成 Balanis 天线方向图
-python study_notes/balanis/code/balanisch06_examples.py
+python scripts/balanis/balanis_ch4_pattern_synthesis.py
 
 # FDTD 电磁场传播可视化
-python study_notes/taflove/code/taflove_fdtd_1d.py
+python scripts/taflove/fdtd_2d_tezwave.py
 ```
 
 ### 生成图表
 
 ```bash
-python study_notes/pozar/code/pozarch04_examples.py
-# 输出: study_notes/pozar/figures/ex04_01_series_impedance.png
+python scripts/pozar/pozarch4_impedance_matching.py
+# 输出: assets/images/pozar_ch4_matching.png
 ```
 
 ---
@@ -104,10 +126,10 @@ python study_notes/pozar/code/pozarch04_examples.py
 
 | 指标 | 数量 |
 |------|:----:|
-| 覆盖教材 | **27 本** |
-| Python 代码文件 | **350+ 个** |
-| 生成图表 | **1,200+ 张** |
-| 覆盖章节 | **342 章节**  
+| 覆盖教材 | **29 本** |
+| Python 代码文件 | **300+ 个** |
+| 生成图表 | **700+ 张** |
+| 覆盖章节 | **314 章节** |
 | OpenClaw Skill | **1 个** |
 
 ---
@@ -124,8 +146,8 @@ python study_notes/pozar/code/pozarch04_examples.py
 
 ### 微信 / 支付宝赞赏码
 > 赞赏码图片放置于此（可选）：
-> ![WeChat QR](assets/sponsor_wechat_qr.png =200x200)
-> ![Alipay QR](assets/sponsor_alipay_qr.png =200x200)
+> `assets/images/sponsor_wechat_qr.png` （请自行添加）
+> `assets/images/sponsor_alipay_qr.png` （请自行添加）
 
 ---
 
