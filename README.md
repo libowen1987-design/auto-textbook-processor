@@ -146,8 +146,8 @@ python scripts/pozar/pozarch4_impedance_matching.py
 
 ### 微信 / 支付宝赞赏码
 > 赞赏码图片放置于此（可选）：
-> `assets/images/sponsor_wechat_qr.png` （请自行添加）
-> `assets/images/sponsor_alipay_qr.png` （请自行添加）
+> ![WeChat QR](assets/sponsor_wechat_qr.png =200x200)
+> ![Alipay QR](assets/sponsor_alipay_qr.png =200x200)
 
 ---
 
