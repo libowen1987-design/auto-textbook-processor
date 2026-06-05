@@ -123,8 +123,8 @@ python study_notes/pozar/code/pozarch04_examples.py
 
 ### 微信 / 支付宝赞赏码
 > 赞赏码图片放置于此（可选）：
-> ![WeChat QR](assets/sponsor_wechat_qr.png =200x200)
-> ![Alipay QR](assets/sponsor_alipay_qr.png =200x200)
+> ![WeChat QR](assets/sponsor_wechat_qr.png)
+> ![Alipay QR](assets/sponsor_alipay_qr.png)
 
 ---
 
