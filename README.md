@@ -62,8 +62,7 @@ auto-textbook-processor/
 │
 ├── assets/                        # 项目资产
 │   ├── sponsor_alipay_qr.png      # 支付宝赞赏码
-│   ├── sponsor_wechat_qr.png      # 微信赞赏码
-│   └── sponsor_*.png              # 赞赏二维码
+│   └── sponsor_wechat_qr.png      # 微信赞赏码
 │
 └── [其他文件]
 ```
